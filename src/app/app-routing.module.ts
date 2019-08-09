@@ -3,15 +3,20 @@ import { Routes, RouterModule } from '@angular/router';
 import { LoginComponent } from 'src/pages/auth/login/login.component';
 import { RegisterComponent } from 'src/pages/auth/register/register.component';
 import { DashboardComponent } from 'src/pages/dashboard/dashboard.component';
+import { AccountSettingsComponent } from 'src/pages/account-settings/account-settings.component';
 
 const routes: Routes = [
   {
     path: 'login',
-    component: LoginComponent,
+    component: LoginComponent
+  },
+  {
+    path: 'account',
+    component: AccountSettingsComponent
   },
   {
     path: 'register',
-    component: RegisterComponent,
+    component: RegisterComponent
   },
   {
     path: '',
@@ -22,14 +27,14 @@ const routes: Routes = [
         loadChildren: () =>
           import('src/modules/products/products.module').then(
             (m) => m.ProductsModule
-          ),
-      },
-    ],
-  },
+          )
+      }
+    ]
+  }
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule],
+  exports: [RouterModule]
 })
 export class AppRoutingModule {}
