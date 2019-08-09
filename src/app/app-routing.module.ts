@@ -3,8 +3,13 @@ import { Routes, RouterModule } from '@angular/router';
 import { LoginComponent } from 'src/pages/auth/login/login.component';
 import { RegisterComponent } from 'src/pages/auth/register/register.component';
 import { DashboardComponent } from 'src/pages/dashboard/dashboard.component';
+import { SidebarComponent } from 'src/app/components/sidebar/sidebar.component';
 
 const routes: Routes = [
+  {
+    path: 'store',
+    component: SidebarComponent,
+  },
   {
     path: 'login',
     component: LoginComponent,
