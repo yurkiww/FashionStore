@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { ProductsModule } from 'src/modules/products/products.module';
 import { AuthModule } from 'src/modules/auth/auth.module';
 import { DashboardModule } from 'src/modules/dashboard/dashboard.module';
+import { ModalModule } from 'src/modules/modal/modal.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -15,8 +16,9 @@ import { DashboardModule } from 'src/modules/dashboard/dashboard.module';
     AuthModule,
     DashboardModule,
     ProductsModule,
+    ModalModule
   ],
   providers: [],
-  bootstrap: [AppComponent],
+  bootstrap: [AppComponent]
 })
 export class AppModule {}
