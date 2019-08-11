@@ -1,4 +1,4 @@
-$border:1px solid #bdbdbd;
+$border: 1px solid #bdbdbd;
 
 * {
   box-sizing: border-box;
@@ -16,7 +16,6 @@ $border:1px solid #bdbdbd;
   -moz-box-shadow: 11px 14px 293px -147px rgba(0, 0, 0, 0.75);
   box-shadow: 11px 14px 293px -147px rgba(0, 0, 0, 0.75);
 
-
   .title {
     font-weight: bold;
     font-size: 15px;
@@ -29,7 +28,6 @@ $border:1px solid #bdbdbd;
     width: 100%;
     display: flex;
     flex-direction: row;
-
   }
 
   .top-inputs {
@@ -49,6 +47,10 @@ $border:1px solid #bdbdbd;
           border: none;
           margin: 0;
         }
+        .email-red-border {
+          border-left: 7px solid #bd3939;
+          border-radius: 0px;
+        }
 
         .email-svg {
           border-right: $border;
@@ -64,17 +66,18 @@ $border:1px solid #bdbdbd;
           }
         }
       }
-
-
     }
-
-
-
   }
 
   .first-n,
   .last-n {
     width: 32%;
+  }
+  .requiredForm {
+    height: 0px;
+    text-align: center;
+    font-size: 12px;
+    color: #af3434;
   }
 
   .bottom-inputs {
@@ -102,7 +105,9 @@ $border:1px solid #bdbdbd;
     outline: none;
     margin: 9px 0 0 0;
     padding: 3%;
-
+  }
+  .red-border {
+    border-left: 7px solid #bd3939;
   }
 
   .input ::placeholder {
@@ -114,7 +119,6 @@ $border:1px solid #bdbdbd;
     justify-content: flex-end;
     padding: 7% 0 0 0;
 
-
     .button {
       width: 75px;
       height: 35px;
@@ -125,15 +129,10 @@ $border:1px solid #bdbdbd;
       border: none;
     }
   }
-
-
-
 }
 
-
-@media screen and (max-width:768px) {
+@media screen and (max-width: 768px) {
   .content {
-
     .top-inputs {
       display: flex;
       flex-direction: column;
@@ -159,7 +158,5 @@ $border:1px solid #bdbdbd;
         margin: 0 0 10px 0;
       }
     }
-
   }
-
 }
