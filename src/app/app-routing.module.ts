@@ -6,11 +6,17 @@ import { DashboardComponent } from 'src/pages/dashboard/dashboard.component';
 import { ModalComponent } from 'src/pages/modal/modal.component';
 import { AccountSettingsComponent } from 'src/pages/account-settings/account-settings.component';
 import { HeaderComponent } from 'src/components/header/header.component';
+import { SidebarComponent } from 'src/app/components/sidebar/sidebar.component';
+import { SidebarComponent } from 'src/app/components/sidebar/sidebar.component';
 
 const routes: Routes = [
   {
     path: '',
     component: HeaderComponent,
+  },
+  {
+    path: 'store',
+    component: SidebarComponent,
   },
   {
     path: 'login',
