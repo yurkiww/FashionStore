@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { ProductsModule } from 'src/modules/products/products.module';
 import { AuthModule } from 'src/modules/auth/auth.module';
 import { DashboardModule } from 'src/modules/dashboard/dashboard.module';
+import { AccountSettingsModule } from 'src/modules/account-settings/account-settings.module';
 import { LayoutModule } from 'src/modules/header/layout/layout.module';
 
 @NgModule({
@@ -16,9 +17,10 @@ import { LayoutModule } from 'src/modules/header/layout/layout.module';
     AuthModule,
     DashboardModule,
     ProductsModule,
+    AccountSettingsModule
     LayoutModule
   ],
   providers: [],
-  bootstrap: [AppComponent],
+  bootstrap: [AppComponent]
 })
 export class AppModule {}
