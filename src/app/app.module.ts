@@ -7,6 +7,8 @@ import { ProductsModule } from 'src/modules/products/products.module';
 import { AuthModule } from 'src/modules/auth/auth.module';
 import { DashboardModule } from 'src/modules/dashboard/dashboard.module';
 import { ModalModule } from 'src/modules/modal/modal.module';
+import { AccountSettingsModule } from 'src/modules/account-settings/account-settings.module';
+import { LayoutModule } from 'src/modules/header/layout/layout.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -16,7 +18,9 @@ import { ModalModule } from 'src/modules/modal/modal.module';
     AuthModule,
     DashboardModule,
     ProductsModule,
-    ModalModule
+    ModalModule,
+    AccountSettingsModule
+    LayoutModule
   ],
   providers: [],
   bootstrap: [AppComponent]

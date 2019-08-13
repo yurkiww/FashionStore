@@ -1,0 +1,93 @@
+<div class="content">
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <p class="title">Account Settings</p>
+    <div class="top-inputs">
+      <div class="first-n">
+        <p>First Name</p>
+        <input
+          class="input"
+          [ngClass]="{
+            'red-border':
+              form.get('firstName').invalid && form.get('firstName').touched
+          }"
+          formControlName="firstName"
+          placeholder="First name"
+          type="text"
+        />
+        <p
+          class="requiredForm"
+          *ngIf="form.get('firstName').invalid && form.get('firstName').touched"
+        >
+          This field is required
+        </p>
+      </div>
+      <div class="last-n">
+        <p>Last name</p>
+        <input
+          class="input"
+          class="input"
+          [ngClass]="{
+            'red-border':
+              form.get('lastName').invalid && form.get('lastName').touched
+          }"
+          formControlName="lastName"
+          placeholder="Last  name"
+          type="text"
+        />
+        <p
+          class="requiredForm"
+          *ngIf="form.get('lastName').invalid && form.get('lastName').touched"
+        >
+          This field is required
+        </p>
+      </div>
+      <div class="email">
+        <p>Email</p>
+        <div class="email-wrap">
+          <div class="email-svg">
+            <img class="svg" src="../../assets//svg//at.svg" alt="" />
+          </div>
+          <div>
+            <input
+              formControlName="email"
+              class="input"
+              [ngClass]="{
+                'email-red-border':
+                  form.get('email').invalid && form.get('email').touched
+              }"
+              class="input email-input"
+              placeholder="Email"
+              type="text"
+            />
+          </div>
+        </div>
+        <p
+          class="requiredForm"
+          *ngIf="form.get('email').invalid && form.get('email').touched"
+        >
+          This field must contain an email!
+        </p>
+      </div>
+    </div>
+
+    <div class="bottom-inputs">
+      <div class="city">
+        <p>City</p>
+        <input class="input" placeholder="City" type="text" />
+      </div>
+      <div class="state">
+        <p>State</p>
+        <input class="input" placeholder="State" type="text" />
+      </div>
+      <div class="zip">
+        <p>Zip</p>
+        <input class="input" placeholder="Zip" type="text" />
+      </div>
+    </div>
+    <div class="btn-wrap">
+      <button class="button" [disabled]="form.invalid" type="submit">
+        Update
+      </button>
+    </div>
+  </form>
+</div>
