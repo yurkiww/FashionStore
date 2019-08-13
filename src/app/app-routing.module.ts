@@ -4,8 +4,13 @@ import { LoginComponent } from 'src/pages/auth/login/login.component';
 import { RegisterComponent } from 'src/pages/auth/register/register.component';
 import { DashboardComponent } from 'src/pages/dashboard/dashboard.component';
 import { AccountSettingsComponent } from 'src/pages/account-settings/account-settings.component';
+import { HeaderComponent } from 'src/components/header/header.component';
 
 const routes: Routes = [
+  {
+    path: '',
+    component: HeaderComponent,
+  },
   {
     path: 'login',
     component: LoginComponent
@@ -19,7 +24,7 @@ const routes: Routes = [
     component: RegisterComponent
   },
   {
-    path: '',
+    path: 'dashboard',
     component: DashboardComponent,
     children: [
       {
