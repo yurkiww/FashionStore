@@ -6,6 +6,7 @@
   justify-content: space-between;
   align-items: center;
   padding: 20px;
+  height: 16vh;
 }
 
 .header__img {
@@ -23,4 +24,10 @@
 .header__user-img {
   width: 60px;
   height: auto;
+}
+
+.modal {
+  position: absolute;
+  right: 5px;
+  top: 100px;
 }
