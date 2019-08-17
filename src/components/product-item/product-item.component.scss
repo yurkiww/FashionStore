@@ -1,0 +1,55 @@
+.item {
+  width: 250px;
+  display: flex;
+  flex-direction: column;
+  font-size: 13px;
+  padding: 5px;
+  margin-right: 5px;
+  border: 1px solid rgba(31, 34, 43, 0.2);
+
+
+
+  &__img {
+    height: 250px;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  &__price {
+    padding: 0px 10px;
+  }
+
+  &_information {
+    padding: 10px;
+
+
+
+    &__name {
+      font-weight: 900;
+      padding-top: 10px;
+    }
+
+    &__button {
+      background-color: #f4511e;
+      border: none;
+      color: white;
+      padding: 4px 16px;
+      text-align: center;
+      font-size: 12px;
+      margin: 2px 0px;
+      opacity: 0.6;
+      transition: 0.3s;
+      display: inline-block;
+      text-decoration: none;
+      cursor: pointer;
+
+      border-radius: 5px;
+
+      &:hover {
+        opacity: 1
+      }
+    }
+  }
+}
