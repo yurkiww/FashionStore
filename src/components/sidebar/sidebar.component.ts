@@ -15,7 +15,7 @@ export class SidebarComponent implements OnInit {
   @Input() sidebar: ISidebar = {
     userName: 'IVAN',
     userLastName: 'IVANOV',
-    userImg: 'assets/boy.png',
+    userImg: 'assets/sidebar/boy.png',
     userStatus: 'admin',
   } as ISidebar;
   constructor() {}

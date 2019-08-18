@@ -1,2 +1,6 @@
-<p>dashboard works!</p>
-<router-outlet></router-outlet>
+<app-header (open)="onOpen($event)" (close)="onClose($event)"></app-header>
+<div class="dashboard_page">
+  <app-sidebar></app-sidebar>
+</div>
+
+<!-- <router-outlet></router-outlet> -->

@@ -3,39 +3,26 @@ import { Routes, RouterModule } from '@angular/router';
 import { LoginComponent } from 'src/pages/auth/login/login.component';
 import { RegisterComponent } from 'src/pages/auth/register/register.component';
 import { DashboardComponent } from 'src/pages/dashboard/dashboard.component';
-import { ModalComponent } from 'src/pages/modal/modal.component';
-import { AccountSettingsComponent } from 'src/pages/account-settings/account-settings.component';
+import { ModalComponent } from 'src/components/modal/modal.component';
+import { AccountSettingsComponent } from 'src/components/account-settings/account-settings.component';
 import { HeaderComponent } from 'src/components/header/header.component';
-import { SidebarComponent } from 'src/app/components/sidebar/sidebar.component';
-import { SidebarComponent } from 'src/app/components/sidebar/sidebar.component';
+import { SidebarComponent } from 'src/components/sidebar/sidebar.component';
 
 const routes: Routes = [
   {
-    path: '',
-    component: HeaderComponent,
-  },
-  {
-    path: 'store',
-    component: SidebarComponent,
-  },
-  {
     path: 'login',
-    component: LoginComponent
-  },
-  {
-    path: 'modal',
-    component: ModalComponent
+    component: LoginComponent,
   },
   {
     path: 'account',
-    component: AccountSettingsComponent
+    component: AccountSettingsComponent,
   },
   {
     path: 'register',
-    component: RegisterComponent
+    component: RegisterComponent,
   },
   {
-    path: 'dashboard',
+    path: '',
     component: DashboardComponent,
     children: [
       {
@@ -43,14 +30,14 @@ const routes: Routes = [
         loadChildren: () =>
           import('src/modules/products/products.module').then(
             (m) => m.ProductsModule
-          )
-      }
-    ]
-  }
+          ),
+      },
+    ],
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
 export class AppRoutingModule {}
