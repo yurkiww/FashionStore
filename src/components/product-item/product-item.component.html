@@ -1,11 +1,11 @@
 <div class="item">
-  <img [src]="item.img" alt="" class="item__img" (click)="onItem()" />
+  <img [src]="item.img" alt="" class="item__img" />
   <div class="item_information">
-    <div [hidden]="visible">
+    <div class='item_unhover'>
       <div class="item_information__name">{{ item.name }}</div>
       <div class="item_information__description">{{ item.description }}</div>
     </div>
-    <div [hidden]="!visible">
+    <div class="item_hover">
       <button class="item_information__button">ADD TO BAG</button>
       <div class="item_information__size">Sizes: {{ item.size }}</div>
     </div>
