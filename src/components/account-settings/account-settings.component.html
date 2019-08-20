@@ -4,40 +4,21 @@
     <div class="top-inputs">
       <div class="first-n">
         <p>First Name</p>
-        <input
-          class="input"
-          [ngClass]="{
+        <input class="input" [ngClass]="{
             'red-border':
               form.get('firstName').invalid && form.get('firstName').touched
-          }"
-          formControlName="firstName"
-          placeholder="First name"
-          type="text"
-        />
-        <p
-          class="requiredForm"
-          *ngIf="form.get('firstName').invalid && form.get('firstName').touched"
-        >
+          }" formControlName="firstName" placeholder="First name" type="text" />
+        <p class="requiredForm" *ngIf="form.get('firstName').invalid && form.get('firstName').touched">
           This field is required
         </p>
       </div>
       <div class="last-n">
         <p>Last name</p>
-        <input
-          class="input"
-          class="input"
-          [ngClass]="{
+        <input class="input" class="input" [ngClass]="{
             'red-border':
               form.get('lastName').invalid && form.get('lastName').touched
-          }"
-          formControlName="lastName"
-          placeholder="Last  name"
-          type="text"
-        />
-        <p
-          class="requiredForm"
-          *ngIf="form.get('lastName').invalid && form.get('lastName').touched"
-        >
+          }" formControlName="lastName" placeholder="Last  name" type="text" />
+        <p class="requiredForm" *ngIf="form.get('lastName').invalid && form.get('lastName').touched">
           This field is required
         </p>
       </div>
@@ -48,23 +29,13 @@
             <img class="svg" src="../../assets//svg//at.svg" alt="" />
           </div>
           <div>
-            <input
-              formControlName="email"
-              class="input"
-              [ngClass]="{
+            <input formControlName="email" class="input" [ngClass]="{
                 'email-red-border':
                   form.get('email').invalid && form.get('email').touched
-              }"
-              class="input email-input"
-              placeholder="Email"
-              type="text"
-            />
+              }" class="input email-input" placeholder="Email" type="text" />
           </div>
         </div>
-        <p
-          class="requiredForm"
-          *ngIf="form.get('email').invalid && form.get('email').touched"
-        >
+        <p class="requiredForm" *ngIf="form.get('email').invalid && form.get('email').touched">
           This field must contain an email!
         </p>
       </div>

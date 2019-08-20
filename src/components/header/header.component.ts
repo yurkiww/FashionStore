@@ -1,5 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
-
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 interface IHeader {
   logoUrl: string;
   userName: string;
@@ -13,13 +12,21 @@ interface IHeader {
   styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent implements OnInit {
+  @Output() open: EventEmitter<any> = new EventEmitter();
+  @Output() close: EventEmitter<any> = new EventEmitter();
+  visible: boolean = false;
+
   @Input() header: IHeader = {
-    logoUrl: 'http://topscripts.in/wp-content/uploads/2017/12/logo-myshop.png',
+    logoUrl: 'assets/header/logo-myshop.png',
     userName: 'Ivan',
     userLastName: 'Ivanov',
-    userImg:
-      'https://cdn2.iconfinder.com/data/icons/ios-7-icons/50/user_male2-512.png',
+    userImg: 'assets/header/user_male.png',
   } as IHeader;
+  //@Output() searchBox = new EventEmitter();
+  openModal = () => {
+    this.visible = !this.visible;
+    this.visible ? this.open.emit(null) : this.close.emit(null);
+  };
   constructor() {}
 
   ngOnInit() {}

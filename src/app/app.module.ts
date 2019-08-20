@@ -6,11 +6,11 @@ import { AppComponent } from './app.component';
 import { ProductsModule } from 'src/modules/products/products.module';
 import { AuthModule } from 'src/modules/auth/auth.module';
 import { DashboardModule } from 'src/modules/dashboard/dashboard.module';
-import { StoreModule } from 'src/modules/store/store.module';
 import { ModalModule } from 'src/modules/modal/modal.module';
+import { DashboardLayoutModule } from 'src/modules/dashboard-layout/dashboard-layout.module';
 import { AccountSettingsModule } from 'src/modules/account-settings/account-settings.module';
-import { LayoutModule } from 'src/modules/header/layout/layout.module';
-
+import { FormsModule } from '@angular/forms';
+import { SearchBoxModule } from 'src/modules/search-box/search-box.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -18,14 +18,15 @@ import { LayoutModule } from 'src/modules/header/layout/layout.module';
     BrowserModule,
     AppRoutingModule,
     AuthModule,
+    SearchBoxModule,
     DashboardModule,
     ProductsModule,
     ModalModule,
+    DashboardLayoutModule,
     AccountSettingsModule,
-    LayoutModule,
-    StoreModule,
+    FormsModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule {}
