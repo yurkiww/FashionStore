@@ -1,4 +1,4 @@
-<app-header></app-header>
+<app-header (open)="onOpen($event)" (close)="onClose($event)"></app-header>
 <div class="dashboard_page">
   <app-sidebar></app-sidebar>
   <div style="width: 100%">

@@ -13,16 +13,12 @@ const routes: Routes = [
     path: 'login',
     component: LoginComponent,
   },
-  // {
-  //   path: 'account',
-  //   component: AccountSettingsComponent,
-  // },
   {
     path: 'register',
     component: RegisterComponent,
   },
   {
-    path: 'dashboard',
+    path: '',
     component: DashboardComponent,
     children: [
       {
