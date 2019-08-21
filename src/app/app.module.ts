@@ -10,7 +10,6 @@ import { ModalModule } from 'src/modules/modal/modal.module';
 import { DashboardLayoutModule } from 'src/modules/dashboard-layout/dashboard-layout.module';
 import { AccountSettingsModule } from 'src/modules/account-settings/account-settings.module';
 import { FormsModule } from '@angular/forms';
-import { SearchBoxModule } from 'src/modules/search-box/search-box.module';
 
 
 @NgModule({
@@ -19,7 +18,6 @@ import { SearchBoxModule } from 'src/modules/search-box/search-box.module';
     BrowserModule,
     AppRoutingModule,
     AuthModule,
-    SearchBoxModule,
     DashboardModule,
     ProductsModule,
     ModalModule,
@@ -30,4 +28,4 @@ import { SearchBoxModule } from 'src/modules/search-box/search-box.module';
   providers: [],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule { }

@@ -25,9 +25,9 @@ export class HeaderComponent implements OnInit {
 
   openModal = () => {
     this.visible = !this.visible;
-    this.visible ? this.open.emit(null) : this.close.emit(null);
+    this.visible ? this.open.emit() : this.close.emit();
   };
-  constructor() {}
+  constructor() { }
 
-  ngOnInit() {}
+  ngOnInit() { }
 }
