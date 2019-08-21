@@ -12,6 +12,7 @@ import { AccountSettingsModule } from 'src/modules/account-settings/account-sett
 import { FormsModule } from '@angular/forms';
 import { SearchBoxModule } from 'src/modules/search-box/search-box.module';
 
+
 @NgModule({
   declarations: [AppComponent],
   imports: [

@@ -22,7 +22,7 @@ export class HeaderComponent implements OnInit {
     userLastName: 'Ivanov',
     userImg: 'assets/header/user_male.png',
   } as IHeader;
-  //@Output() searchBox = new EventEmitter();
+
   openModal = () => {
     this.visible = !this.visible;
     this.visible ? this.open.emit(null) : this.close.emit(null);
