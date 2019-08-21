@@ -13,16 +13,16 @@ const routes: Routes = [
     path: 'login',
     component: LoginComponent,
   },
-  {
-    path: 'account',
-    component: AccountSettingsComponent,
-  },
+  // {
+  //   path: 'account',
+  //   component: AccountSettingsComponent,
+  // },
   {
     path: 'register',
     component: RegisterComponent,
   },
   {
-    path: '',
+    path: 'dashboard',
     component: DashboardComponent,
     children: [
       {
@@ -30,6 +30,13 @@ const routes: Routes = [
         loadChildren: () =>
           import('src/modules/products/products.module').then(
             (m) => m.ProductsModule
+          ),
+      },
+      {
+        path: 'account',
+        loadChildren: () =>
+          import('src/modules/account-settings/account-settings.module').then(
+            (m) => m.AccountSettingsModule
           ),
       },
     ],
