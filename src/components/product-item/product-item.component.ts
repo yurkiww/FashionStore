@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { IProductItem } from 'src/interfaces/product-item';
 
 @Component({
@@ -9,7 +9,7 @@ import { IProductItem } from 'src/interfaces/product-item';
 export class ProductItemComponent implements OnInit {
   @Input() item: IProductItem;
 
-  constructor() {}
+  constructor() { }
 
-  ngOnInit() {}
+  ngOnInit() { }
 }
