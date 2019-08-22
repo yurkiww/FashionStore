@@ -7,11 +7,15 @@
   margin-right: 5px;
   border: 1px solid rgba(31, 34, 43, 0.2);
 
+
   &_hover {
     display: none
   }
 
   &:hover {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+
+
     .item_unhover {
       display: none
     }
