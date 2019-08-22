@@ -9,6 +9,8 @@ import { DashboardModule } from 'src/modules/dashboard/dashboard.module';
 import { ModalModule } from 'src/modules/modal/modal.module';
 import { DashboardLayoutModule } from 'src/modules/dashboard-layout/dashboard-layout.module';
 import { AccountSettingsModule } from 'src/modules/account-settings/account-settings.module';
+import { FormsModule } from '@angular/forms';
+
 
 @NgModule({
   declarations: [AppComponent],
@@ -21,8 +23,9 @@ import { AccountSettingsModule } from 'src/modules/account-settings/account-sett
     ModalModule,
     DashboardLayoutModule,
     AccountSettingsModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule { }
