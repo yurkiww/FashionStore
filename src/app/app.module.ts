@@ -9,6 +9,7 @@ import { DashboardModule } from 'src/modules/dashboard/dashboard.module';
 import { ModalModule } from 'src/modules/modal/modal.module';
 import { DashboardLayoutModule } from 'src/modules/dashboard-layout/dashboard-layout.module';
 import { AccountSettingsModule } from 'src/modules/account-settings/account-settings.module';
+import { ProductInfoModule } from 'src/modules/product-info/product-info.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -21,8 +22,9 @@ import { AccountSettingsModule } from 'src/modules/account-settings/account-sett
     ModalModule,
     DashboardLayoutModule,
     AccountSettingsModule,
+    ProductInfoModule
   ],
   providers: [],
-  bootstrap: [AppComponent],
+  bootstrap: [AppComponent]
 })
 export class AppModule {}
