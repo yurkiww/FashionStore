@@ -1,3 +1,5 @@
+@import './src/colors/colors.scss';
+
 * {
   margin: 0;
   padding: 0;
@@ -5,13 +7,13 @@
 }
 
 p {
-  color: white;
+  color: $white;
 }
 
 .sidebar {
   width: 250px;
   height: 84vh;
-  background-color: rgb(31, 34, 43);
+  background-color: $grey-blue;
 }
 
 @media only screen and (max-width: 1270px) {
@@ -31,7 +33,7 @@ p {
   width: 64px;
   height: 64px;
   border-radius: 25%;
-  background-color: aliceblue;
+  background-color: $aliceblue;
   background-size: 64px 64px;
 }
 
@@ -63,8 +65,8 @@ p {
 }
 
 .sidebar_list_item:hover {
-  border-left: 2px solid rgb(33, 76, 207);
-  background-color: rgb(63, 68, 84);
+  border-left: $sidebar_list_item-hover-border;
+  background-color: $sidebar_list_item-hover-color;
   cursor: pointer;
 }
 
