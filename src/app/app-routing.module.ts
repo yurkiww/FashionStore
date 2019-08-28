@@ -9,14 +9,12 @@ import { HeaderComponent } from 'src/components/header/header.component';
 import { SidebarComponent } from 'src/components/sidebar/sidebar.component';
 import { ProductInfoComponent } from 'src/pages/product-info/product-info.component';
 
+
+
 const routes: Routes = [
   {
     path: 'login',
     component: LoginComponent,
-  },
-  {
-    path: 'account',
-    component: AccountSettingsComponent,
   },
   {
     path: 'register',
@@ -33,6 +31,13 @@ const routes: Routes = [
             (m) => m.ProductsModule
           ),
       },
+      {
+        path: 'account',
+        loadChildren: () =>
+          import('src/modules/account-settings/account-settings.module').then(
+            (m) => m.AccountSettingsModule
+          ),
+      },
     ],
   },
   {
@@ -45,4 +50,4 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }

@@ -15,6 +15,12 @@ p {
   background-color: rgb(31, 34, 43);
 }
 
+@media only screen and (max-width: 1270px) {
+  .sidebar {
+    height: 100%;
+  }
+}
+
 .sidebar_head {
   padding: 20px 15px 10px 15px;
   height: 12vh;
@@ -67,4 +73,8 @@ p {
   border-left: 2px solid rgb(33, 76, 207);
   background-color: rgb(63, 68, 84);
   cursor: pointer;
+}
+
+a {
+  text-decoration: none
 }

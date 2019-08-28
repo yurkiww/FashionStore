@@ -11,6 +11,10 @@ import { DashboardLayoutModule } from 'src/modules/dashboard-layout/dashboard-la
 import { AccountSettingsModule } from 'src/modules/account-settings/account-settings.module';
 import { ProductInfoModule } from 'src/modules/product-info/product-info.module';
 
+import { FormsModule } from '@angular/forms';
+
+
+
 @NgModule({
   declarations: [AppComponent],
   imports: [
@@ -23,8 +27,10 @@ import { ProductInfoModule } from 'src/modules/product-info/product-info.module'
     DashboardLayoutModule,
     AccountSettingsModule,
     ProductInfoModule
+    FormsModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule {}
+export class AppModule { }
