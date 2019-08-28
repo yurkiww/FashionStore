@@ -9,7 +9,10 @@ import { DashboardModule } from 'src/modules/dashboard/dashboard.module';
 import { ModalModule } from 'src/modules/modal/modal.module';
 import { DashboardLayoutModule } from 'src/modules/dashboard-layout/dashboard-layout.module';
 import { AccountSettingsModule } from 'src/modules/account-settings/account-settings.module';
+import { ProductInfoModule } from 'src/modules/product-info/product-info.module';
+
 import { FormsModule } from '@angular/forms';
+
 
 
 @NgModule({
@@ -23,9 +26,11 @@ import { FormsModule } from '@angular/forms';
     ModalModule,
     DashboardLayoutModule,
     AccountSettingsModule,
+    ProductInfoModule
     FormsModule,
+
   ],
   providers: [],
-  bootstrap: [AppComponent],
+  bootstrap: [AppComponent]
 })
 export class AppModule { }
