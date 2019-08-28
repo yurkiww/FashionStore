@@ -7,6 +7,8 @@ import { ProductsModule } from 'src/modules/products/products.module';
 import { AuthModule } from 'src/modules/auth/auth.module';
 import { DashboardModule } from 'src/modules/dashboard/dashboard.module';
 import { AccountSettingsModule } from 'src/modules/account-settings/account-settings.module';
+import { ProductInfoModule } from 'src/modules/product-info/product-info.module';
+
 import { FormsModule } from '@angular/forms';
 
 @NgModule({
@@ -18,9 +20,10 @@ import { FormsModule } from '@angular/forms';
     DashboardModule,
     ProductsModule,
     AccountSettingsModule,
-    FormsModule,
+    ProductInfoModule,
+    FormsModule
   ],
   providers: [],
-  bootstrap: [AppComponent],
+  bootstrap: [AppComponent]
 })
-export class AppModule {}
+export class AppModule { }

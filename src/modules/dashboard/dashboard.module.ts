@@ -21,5 +21,11 @@ import { ModalComponent } from 'src/components/modal/modal.component';
     AppRoutingModule,
     FormsModule,
   ],
+  exports: [
+    DashboardComponent,
+    SidebarComponent,
+    HeaderComponent,
+    ModalComponent,
+  ]
 })
-export class DashboardModule {}
+export class DashboardModule { }
