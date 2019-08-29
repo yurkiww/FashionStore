@@ -1,6 +1,8 @@
 @import './src/colors/colors.scss';
 
 .header__search-box {
+
+
   .search-box__btn {
     position: absolute;
     padding: 0;
@@ -33,7 +35,7 @@
     border: none;
     outline: none;
     border-radius: 5px;
-    padding: 15px 1px 15px 50px;
+    padding: 15px 10px 15px 70px;
     background-size: auto 90%;
     background-color: $search-box-bc;
     font-size: 15px;
