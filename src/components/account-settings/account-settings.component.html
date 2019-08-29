@@ -6,9 +6,9 @@
         <p>First Name</p>
         <input class="input" [ngClass]="{
             'red-border':
-              form.get('firstName').invalid && form.get('firstName').touched
+              isFieldValid('firstName')
           }" formControlName="firstName" placeholder="First name" type="text" />
-        <p class="requiredForm" *ngIf="form.get('firstName').invalid && form.get('firstName').touched">
+        <p class="requiredForm" *ngIf="isFieldValid('firstName')d">
           This field is required
         </p>
       </div>
@@ -16,9 +16,9 @@
         <p>Last name</p>
         <input class="input" class="input" [ngClass]="{
             'red-border':
-              form.get('lastName').invalid && form.get('lastName').touched
+            isFieldValid('lastName')
           }" formControlName="lastName" placeholder="Last  name" type="text" />
-        <p class="requiredForm" *ngIf="form.get('lastName').invalid && form.get('lastName').touched">
+        <p class="requiredForm" *ngIf="isFieldValid('lastName')">
           This field is required
         </p>
       </div>
@@ -31,11 +31,11 @@
           <div>
             <input formControlName="email" class="input" [ngClass]="{
                 'email-red-border':
-                  form.get('email').invalid && form.get('email').touched
+                  isFieldValid('email')
               }" class="input email-input" placeholder="Email" type="text" />
           </div>
         </div>
-        <p class="requiredForm" *ngIf="form.get('email').invalid && form.get('email').touched">
+        <p class="requiredForm" *ngIf="isFieldValid('email')">
           This field must contain an email!
         </p>
       </div>
@@ -44,15 +44,33 @@
     <div class="bottom-inputs">
       <div class="city">
         <p>City</p>
-        <input class="input" placeholder="City" type="text" />
+        <input [ngClass]="{
+          'red-border':
+            isFieldValid('city')
+        }" formControlName="city" class="input" placeholder="City" type="text" />
+        <p class="requiredForm" *ngIf="isFieldValid('city')">
+          This field is required
+        </p>
       </div>
       <div class="state">
         <p>State</p>
-        <input class="input" placeholder="State" type="text" />
+        <input [ngClass]="{
+          'red-border':
+            isFieldValid('state')
+        }" formControlName="state" class="input" placeholder="State" type="text" />
+        <p class="requiredForm" *ngIf="isFieldValid('state')">
+          This field is required
+        </p>
       </div>
       <div class="zip">
         <p>Zip</p>
-        <input class="input" placeholder="Zip" type="text" />
+        <input [ngClass]="{
+          'red-border':
+            isFieldValid('zip')
+        }" formControlName="zip" class="input" placeholder="Zip" type="text" />
+        <p class="requiredForm" *ngIf="isFieldValid('zip')">
+          This field is required
+        </p>
       </div>
     </div>
     <div class="btn-wrap">

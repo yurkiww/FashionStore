@@ -17,7 +17,6 @@
 
 .header__user {
   flex: 2;
-  font-family: "Poppins", sans-serif;
   text-align: end;
   margin-right: 50px;
 }
@@ -37,14 +36,7 @@
   top: 100px;
 }
 
-.modal {
+.search-box {
   position: absolute;
-  right: 5px;
-  top: 100px;
-}
-
-.searchBox {
-  position: absolute;
-  left: 45%;
-  top: 6%;
+  left: 50%;
 }

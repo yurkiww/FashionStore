@@ -7,6 +7,7 @@ import { SearchBoxModule } from '../search-box/search-box.module';
 import { ProductDetailComponent } from 'src/pages/product-detail/product-detail.component';
 import { ProductDetailModule } from '../product-detail/product-detail.module';
 import { ItemBottomSectionModule } from '../item-bottom-section/item-bottom-section.module';
+import { ComponentsModule } from '../components/components.module';
 
 const routes: Route[] = [
   {
@@ -17,15 +18,6 @@ const routes: Route[] = [
   {
     path: 'info',
     component: ProductDetailComponent,
-    // children: [
-    //   {
-    //     path: '',
-    //     loadChildren: () =>
-    //       import('../item-bottom-section/item-bottom-section.module').then(
-    //         (m) => m.ItemBottomSectionModule
-    //       ),
-    //   },
-    // ],
   },
 ];
 
@@ -38,6 +30,7 @@ const routes: Route[] = [
     ProductDetailModule,
     SearchBoxModule,
     ItemBottomSectionModule,
+    ComponentsModule
   ],
   exports: [RouterModule],
 })

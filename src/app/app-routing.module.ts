@@ -1,10 +1,13 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import { Route, RouterModule } from '@angular/router';
 import { LoginComponent } from 'src/pages/auth/login/login.component';
 import { RegisterComponent } from 'src/pages/auth/register/register.component';
 import { DashboardComponent } from 'src/pages/dashboard/dashboard.component';
+import { ProductInfoComponent } from 'src/pages/product-info/product-info.component';
 
-const routes: Routes = [
+
+
+const routes: Route[] = [
   {
     path: 'login',
     component: LoginComponent,
@@ -12,6 +15,10 @@ const routes: Routes = [
   {
     path: 'register',
     component: RegisterComponent,
+  },
+  {
+    path: 'product-info',
+    component: ProductInfoComponent
   },
   {
     path: '',
@@ -30,13 +37,13 @@ const routes: Routes = [
           import('src/modules/account-settings/account-settings.module').then(
             (m) => m.AccountSettingsModule
           ),
-      },
+      }
     ],
-  },
+  }
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

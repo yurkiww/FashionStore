@@ -1,3 +1,5 @@
+@import './src/colors/colors.scss';
+
 .item {
   width: 250px;
   display: flex;
@@ -5,13 +7,16 @@
   font-size: 13px;
   padding: 5px;
   margin-right: 5px;
-  border: 1px solid rgba(31, 34, 43, 0.2);
+  border: $product-item_border;
+  transition: 0.5s;
 
   &_hover {
     display: none
   }
 
   &:hover {
+    box-shadow: $product-item-hover;
+
     .item_unhover {
       display: none
     }
@@ -30,6 +35,14 @@
 
   &__price {
     padding: 0px 10px;
+
+    s {
+      color: $grey;
+    }
+
+    small {
+      color: $product-item_button-bc;
+    }
   }
 
   &_information {
@@ -43,9 +56,9 @@
     }
 
     &__button {
-      background-color: #f4511e;
+      background-color: $product-item_button-bc;
       border: none;
-      color: white;
+      color: $white;
       padding: 4px 16px;
       text-align: center;
       font-size: 12px;
@@ -55,7 +68,6 @@
       display: inline-block;
       text-decoration: none;
       cursor: pointer;
-
       border-radius: 5px;
 
       &:hover {
