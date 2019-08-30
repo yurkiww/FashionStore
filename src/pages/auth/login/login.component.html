@@ -1,1 +1,26 @@
-<p>login works!</p>
+<div class="login">
+  <img src="assets/auth/login.jpg" class="login_picture">
+  <div class="login_block">
+    <form [formGroup]="loginForm" (submit)="loginUser()" class="login_block_form">
+      <h2>Log in</h2>
+      <p><small>If you don't have an account yet, please <a routerLink='/register'><u>register</u></a> first.</small>
+      </p>
+      <br>
+      <div class="login_block_form__item">
+        <input formControlName="email" type="email" class="login_block_form__item-control" placeholder="Enter email">
+      </div>
+      <div class="login_block_form__item">
+        <input formControlName="password" type="password" class="login_block_form__item-control" placeholder="Password">
+        <p><small><a><u>I forgot my password</u></a></small></p>
+      </div>
+      <div class="custom-control custom-checkbox">
+        <input formControlName="remember" type="checkbox" class="custom-control-input" id="customCheck1">
+        <label class="custom-control-label" for="customCheck1">Remember
+          me</label>
+      </div>
+      <br>
+      <br>
+      <button class="login_block_form__button">Log in</button>
+    </form>
+  </div>
+</div>
