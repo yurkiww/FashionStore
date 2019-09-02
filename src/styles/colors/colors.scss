@@ -38,3 +38,37 @@ $auth_button_color: #007bff;
 $auth_checkbox_color: #495057;
 $auth_checkbox_border:1px solid #ced4da;
 $auth_checkbox_border-before: #adb5bd solid 1px;
+
+// buttons
+@mixin dark {
+  color: #343a40;
+  border-color: #343a40;
+
+  &:hover {
+    color: #fff;
+    background-color: #343a40;
+    cursor: pointer;
+  }
+
+
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 0 0.2rem rgba(52, 58, 64, .5)
+  }
+}
+
+@mixin success {
+  color: #28a745;
+  border-color: #28a745;
+
+  &:hover {
+    color: white;
+    background-color: #28a745;
+    cursor: pointer;
+  }
+
+  &:focus {
+    box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, .5);
+    outline: none
+  }
+}
