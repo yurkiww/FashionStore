@@ -14,14 +14,14 @@
     width: 60vw;
     height: 100vh;
     background-size: 60vw 100vh;
-    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
-    border-radius: 0 25px 25px 0;
+    // box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+    // border-radius: 0 25px 25px 0;
   }
 
   &_block {
     width: 40vw;
     height: 100vh;
-    padding: 10vh 5vw;
+    // padding: 10vh 5vw;
 
 
     &_form {
@@ -31,6 +31,7 @@
       input {
         width: 100%;
         margin-bottom: 10px;
+        height: 70px;
       }
 
       p {
@@ -60,6 +61,7 @@
       &__button {
         color: $white;
         background-color: $auth_button_color;
+        height: 50px;
         width: 100%;
         display: inline-block;
         font-weight: 400;
