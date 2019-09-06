@@ -9,5 +9,5 @@
     <app-product-item [item]="product"></app-product-item>
   </div>
 </div>
-
+<app-pagination size="12" total="100" (pageChanged)="onPageChanged($event)"></app-pagination>
 <router-outlet></router-outlet>
