@@ -5,8 +5,6 @@ import { RegisterComponent } from 'src/pages/auth/register/register.component';
 import { DashboardComponent } from 'src/pages/dashboard/dashboard.component';
 import { ProductInfoComponent } from 'src/pages/product-info/product-info.component';
 
-
-
 const routes: Route[] = [
   {
     path: 'login',
@@ -18,7 +16,7 @@ const routes: Route[] = [
   },
   {
     path: 'product-info',
-    component: ProductInfoComponent
+    component: ProductInfoComponent,
   },
   {
     path: '',
@@ -37,9 +35,16 @@ const routes: Route[] = [
           import('src/modules/account-settings/account-settings.module').then(
             (m) => m.AccountSettingsModule
           ),
-      }
+      },
+      {
+        path: 'new-item',
+        loadChildren: () =>
+          import('src/modules/new-item-page/new-item-page.module').then(
+            (m) => m.NewItemPageModule
+          ),
+      },
     ],
-  }
+  },
 ];
 
 @NgModule({
