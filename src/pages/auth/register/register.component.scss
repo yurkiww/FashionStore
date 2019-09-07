@@ -1,0 +1,16 @@
+@import './src/styles/auth/auth.scss';
+@import './src/styles/colors/colors.scss';
+
+@include main;
+
+
+
+.register {
+  @include page;
+}
+
+@media screen and (max-width: 900px) {
+  .register {
+    @include media;
+  }
+}

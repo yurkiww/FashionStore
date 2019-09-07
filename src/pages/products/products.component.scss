@@ -1,3 +1,5 @@
+@import './src/styles/colors/colors.scss';
+
 .product__list {
   display: flex;
   flex-wrap: wrap;
@@ -5,12 +7,17 @@
   padding: 10px 10px;
 }
 
+.product__add-item-btn {
+  position: absolute;
+}
+
 hr {
   margin-top: 30px;
 }
 
 .product__search {
-  position: relative;
-  left: 48%;
   padding: 0px 10px;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
 }
