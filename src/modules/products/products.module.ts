@@ -10,13 +10,13 @@ import { ComponentsModule } from '../components/components.module';
 const routes: Route[] = [
   {
     path: '',
-    component: ProductsComponent,
+    component: ProductsComponent
   },
 
   {
     path: 'info',
-    component: ProductDetailComponent,
-  },
+    component: ProductDetailComponent
+  }
 ];
 
 @NgModule({
@@ -28,6 +28,6 @@ const routes: Route[] = [
     ItemBottomSectionModule,
     ComponentsModule,
   ],
-  exports: [RouterModule],
+  exports: [RouterModule]
 })
 export class ProductsModule {}
