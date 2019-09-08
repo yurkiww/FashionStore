@@ -7,7 +7,6 @@ import { ProductsModule } from 'src/modules/products/products.module';
 import { AuthModule } from 'src/modules/auth/auth.module';
 import { DashboardModule } from 'src/modules/dashboard/dashboard.module';
 import { AccountSettingsModule } from 'src/modules/account-settings/account-settings.module';
-import { ProductInfoModule } from 'src/modules/product-info/product-info.module';
 
 import { FormsModule } from '@angular/forms';
 
@@ -20,7 +19,6 @@ import { FormsModule } from '@angular/forms';
     DashboardModule,
     ProductsModule,
     AccountSettingsModule,
-    ProductInfoModule,
     FormsModule
   ],
   providers: [],

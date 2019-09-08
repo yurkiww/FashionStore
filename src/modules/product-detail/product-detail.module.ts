@@ -4,9 +4,10 @@ import { ProductDetailComponent } from 'src/pages/product-detail/product-detail.
 import { ItemBottomSectionComponent } from 'src/components/item-bottom-section/item-bottom-section.component';
 import { ItemBottomSectionModule } from '../item-bottom-section/item-bottom-section.module';
 import { Route, RouterModule } from '@angular/router';
+import { ProductInfoComponent } from 'src/pages/product-info/product-info.component';
 
 @NgModule({
-  declarations: [ProductDetailComponent],
+  declarations: [ProductDetailComponent, ProductInfoComponent],
   imports: [CommonModule, ItemBottomSectionModule],
   exports: [ProductDetailComponent, ItemBottomSectionModule],
 })
