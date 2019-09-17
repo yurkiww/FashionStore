@@ -3,6 +3,7 @@ import { Route, RouterModule } from '@angular/router';
 import { LoginComponent } from 'src/pages/auth/login/login.component';
 import { RegisterComponent } from 'src/pages/auth/register/register.component';
 import { DashboardComponent } from 'src/pages/dashboard/dashboard.component';
+import { CartComponent } from 'src/pages/cart/cart.component';
 
 const routes: Route[] = [
   {
@@ -37,6 +38,11 @@ const routes: Route[] = [
           import('src/modules/new-item-page/new-item-page.module').then(
             (m) => m.NewItemPageModule
           ),
+      },
+      {
+        path: 'cart',
+        loadChildren: () =>
+          import('src/modules/cart/cart.module').then((m) => m.CartModule),
       },
     ],
   },
