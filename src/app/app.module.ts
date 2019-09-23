@@ -1,5 +1,4 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -10,6 +9,7 @@ import { AccountSettingsModule } from 'src/modules/account-settings/account-sett
 import { CartModule } from 'src/modules/cart/cart.module';
 
 import { FormsModule } from '@angular/forms';
+import { NgModule } from '@angular/core';
 
 @NgModule({
   declarations: [AppComponent],
