@@ -105,3 +105,28 @@ p>small>a>u {
     }
   }
 }
+
+.show_password {
+  display: flex;
+
+  input {
+    width: 80%
+  }
+
+  div {
+    width: 20%;
+    height: 70px;
+    padding: 16px 13px;
+    opacity: 0.4;
+
+    &:hover {
+      opacity: 0.6;
+      cursor: pointer;
+    }
+
+    img {
+      width: 40px;
+      height: 40px;
+    }
+  }
+}

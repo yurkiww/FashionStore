@@ -70,7 +70,9 @@
         display: flex;
         padding: 0 0 0 35px;
         height: 40px;
-
+        &:hover{
+          cursor: pointer;
+        }
         .image {
           width: 15px;
           height: 15px;

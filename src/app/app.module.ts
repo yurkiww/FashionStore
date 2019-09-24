@@ -9,6 +9,15 @@ import { DashboardModule } from 'src/modules/dashboard/dashboard.module';
 import { AccountSettingsModule } from 'src/modules/account-settings/account-settings.module';
 
 import { FormsModule } from '@angular/forms';
+import { StoreModule } from '@ngrx/store';
+import { store } from 'src/store/reducers';
+import { EffectsModule } from '@ngrx/effects';
+import { UserEffects } from 'src/store/effects/user.effect';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+// import { AuthInterceptor } from 'src/services/auth.interceptor';
+import { AuthGuardService } from 'src/services/authguard.service';
+import { SimpleNotificationsModule } from 'angular2-notifications';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [AppComponent],
@@ -19,9 +28,21 @@ import { FormsModule } from '@angular/forms';
     DashboardModule,
     ProductsModule,
     AccountSettingsModule,
-    FormsModule
+    FormsModule,
+    StoreModule.forRoot(store),
+    EffectsModule.forRoot([UserEffects]),
+    HttpClientModule,
+    SimpleNotificationsModule.forRoot(),
+    BrowserAnimationsModule,
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [
+    // {
+    //   provide: HTTP_INTERCEPTORS,
+    //   useClass: AuthInterceptor,
+    //   multi: true,
+    // },
+    AuthGuardService,
+  ],
+  bootstrap: [AppComponent],
 })
 export class AppModule {}
