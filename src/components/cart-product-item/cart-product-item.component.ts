@@ -8,18 +8,19 @@ import { ICartProductItem } from 'src/interfaces/cart-product-item';
 })
 export class CartProductItemComponent implements OnInit {
   @Input() item: ICartProductItem;
-  selectedOption: number = 1;
+  @Output() OnChanged = new EventEmitter();
+
+  selectedOption = 1;
   constructor() {}
   sum: number;
-  onChange() {
+  onChange(): number {
     this.sum = 0;
     this.sum = this.item.price * this.selectedOption;
     return this.sum;
   }
-  @Output() onChanged = new EventEmitter<number>();
 
   sendSum() {
-    this.onChanged.emit(this.onChange());
+    this.OnChanged.emit(this.onChange());
   }
   removeItem() {}
   ngOnInit() {
