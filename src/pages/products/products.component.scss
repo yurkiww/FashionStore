@@ -1,4 +1,4 @@
-@import './src/styles/colors/colors.scss';
+@import "./src/styles/colors/colors.scss";
 
 .product__list {
   display: flex;
@@ -16,6 +16,8 @@ hr {
 }
 
 .product__search {
+  margin-left: 15%;
+  margin-bottom: 40px;
   padding: 0px 10px;
   width: 100%;
   display: flex;

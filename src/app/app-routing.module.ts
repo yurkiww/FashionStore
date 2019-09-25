@@ -4,6 +4,8 @@ import { LoginComponent } from 'src/pages/auth/login/login.component';
 import { RegisterComponent } from 'src/pages/auth/register/register.component';
 import { DashboardComponent } from 'src/pages/dashboard/dashboard.component';
 import { AuthGuardService as AuthGuard } from 'src/services/authguard.service';
+import { CartComponent } from 'src/pages/cart/cart.component';
+
 const routes: Route[] = [
   {
     path: 'login',
@@ -38,6 +40,11 @@ const routes: Route[] = [
           import('src/modules/new-item-page/new-item-page.module').then(
             (m) => m.NewItemPageModule
           ),
+      },
+      {
+        path: 'cart',
+        loadChildren: () =>
+          import('src/modules/cart/cart.module').then((m) => m.CartModule),
       },
     ],
   },

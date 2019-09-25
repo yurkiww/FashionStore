@@ -1,5 +1,4 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -7,6 +6,7 @@ import { ProductsModule } from 'src/modules/products/products.module';
 import { AuthModule } from 'src/modules/auth/auth.module';
 import { DashboardModule } from 'src/modules/dashboard/dashboard.module';
 import { AccountSettingsModule } from 'src/modules/account-settings/account-settings.module';
+import { CartModule } from 'src/modules/cart/cart.module';
 
 import { FormsModule } from '@angular/forms';
 import { StoreModule } from '@ngrx/store';
@@ -18,6 +18,7 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthGuardService } from 'src/services/authguard.service';
 import { SimpleNotificationsModule } from 'angular2-notifications';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NgModule } from '@angular/core';
 
 @NgModule({
   declarations: [AppComponent],
@@ -34,6 +35,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     HttpClientModule,
     SimpleNotificationsModule.forRoot(),
     BrowserAnimationsModule,
+    CartModule,
   ],
   providers: [
     // {
