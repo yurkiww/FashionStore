@@ -10,7 +10,11 @@
         <input formControlName="email" type="email" class="login_block_form__item-control" placeholder="Enter email">
       </div>
       <div class="login_block_form__item">
-        <input formControlName="password" type="password" class="login_block_form__item-control" placeholder="Password">
+        <div class="show_password">
+          <input formControlName="password" [type]="inputTypePassword" class="login_block_form__item-control"
+            placeholder="Password" id="showPassword">
+          <div (mousedown)="showPassword()" (mouseup)="hidePassword()"><img src="assets/auth/hidden.svg" alt=""></div>
+        </div>
         <p><small><a><u>I forgot my password</u></a></small></p>
       </div>
       <div class="custom-control custom-checkbox">
@@ -20,7 +24,7 @@
       </div>
       <br>
       <br>
-      <button class="login_block_form__button">Log in</button>
+      <button class="login_block_form__button" [disabled]="loginForm.invalid">Log in</button>
     </form>
   </div>
 </div>
