@@ -26,5 +26,8 @@
     <p>{{total.toFixed(2)}}</p>
   </div>
 
-  <button>place order</button>
+  <button (click)="openModal()">Place Order</button>
+
+  <app-modal-place-order></app-modal-place-order>
+
 </div>

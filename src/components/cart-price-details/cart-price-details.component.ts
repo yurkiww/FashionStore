@@ -10,6 +10,6 @@ export class CartPriceDetailsComponent implements OnInit {
   @Input() price: IPriceDetails;
   @Input() total: number;
   constructor() {}
-
+  openModal() {}
   ngOnInit() {}
 }
