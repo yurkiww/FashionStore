@@ -38,7 +38,7 @@ export class CartComponent implements OnInit {
     },
   ];
   constructor() {}
-  @Input() sum: number = 0;
+  @Input() sum = 0;
   receiveSum($event) {
     this.sum += $event;
   }

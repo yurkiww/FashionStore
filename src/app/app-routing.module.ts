@@ -4,7 +4,6 @@ import { LoginComponent } from 'src/pages/auth/login/login.component';
 import { RegisterComponent } from 'src/pages/auth/register/register.component';
 import { DashboardComponent } from 'src/pages/dashboard/dashboard.component';
 import { AuthGuardService as AuthGuard } from 'src/services/authguard.service';
-import { CartComponent } from 'src/pages/cart/cart.component';
 
 const routes: Route[] = [
   {

@@ -12,9 +12,9 @@ interface IHeader {
   styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent implements OnInit {
-  @Output() open: EventEmitter<any> = new EventEmitter();
-  @Output() close: EventEmitter<any> = new EventEmitter();
-  visible: boolean = false;
+  @Output() OnOpen = new EventEmitter();
+  @Output() OnClose = new EventEmitter();
+  visible = false;
 
   @Input() header: IHeader = {
     logoUrl: 'assets/header/logo-myshop.png',
@@ -25,7 +25,7 @@ export class HeaderComponent implements OnInit {
 
   openModal = () => {
     this.visible = !this.visible;
-    this.visible ? this.open.emit() : this.close.emit();
+    this.visible ? this.OnOpen.emit() : this.OnClose.emit();
   };
   constructor() { }
 

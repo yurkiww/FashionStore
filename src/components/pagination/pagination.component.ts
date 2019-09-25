@@ -18,7 +18,7 @@ export class PaginationComponent implements OnInit {
   constructor() {}
 
   onNext() {
-    if (!this.canNext) return;
+    if (!this.canNext) { return; }
     this.page++;
     this.pageChanged.emit({
       min: this.min,
@@ -27,7 +27,7 @@ export class PaginationComponent implements OnInit {
     });
   }
   onPrev() {
-    if (!this.canPrev) return;
+    if (!this.canPrev) { return; }
     this.page--;
     this.pageChanged.emit({
       min: this.min,

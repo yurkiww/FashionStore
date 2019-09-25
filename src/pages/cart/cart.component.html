@@ -5,7 +5,7 @@
   </div>
   <div class="cart-product__list">
     <div *ngFor="let product of productItems">
-      <app-cart-product-item [item]="product" (onChanged)="receiveSum($event)"></app-cart-product-item>
+      <app-cart-product-item [item]="product" (OnChanged)="receiveSum($event)"></app-cart-product-item>
     </div>
   </div>
 
