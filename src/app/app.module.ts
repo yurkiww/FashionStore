@@ -7,6 +7,7 @@ import { ProductsModule } from 'src/modules/products/products.module';
 import { AuthModule } from 'src/modules/auth/auth.module';
 import { DashboardModule } from 'src/modules/dashboard/dashboard.module';
 import { AccountSettingsModule } from 'src/modules/account-settings/account-settings.module';
+import { CartModule } from 'src/modules/cart/cart.module';
 
 import { FormsModule } from '@angular/forms';
 
@@ -19,9 +20,10 @@ import { FormsModule } from '@angular/forms';
     DashboardModule,
     ProductsModule,
     AccountSettingsModule,
-    FormsModule
+    FormsModule,
+    CartModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule {}
