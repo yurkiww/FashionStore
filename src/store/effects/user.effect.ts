@@ -37,12 +37,8 @@ export class UserEffects {
               console.log(user);
               this.goToHomePage();
               action.remember
-                ? this.storageService.setLocalToken(
-                    `Bearer ${user.access_token}`
-                  )
-                : this.storageService.setSessionToken(
-                    `Bearer ${user.access_token}`
-                  );
+                ? this.storageService.setLocalToken(user.access_token)
+                : this.storageService.setSessionToken(user.access_token);
               return loginSuccess();
             }),
             catchError((error) => of(loginFailure()))

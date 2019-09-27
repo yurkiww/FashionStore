@@ -16,6 +16,33 @@ export class UserService {
   // getUsers(): Observable<IUserHttp> {
   //   return this.http.get<IUserHttp>(this.API_URL);
   // }
+  getMe(): Observable<any> {
+    return this.http.get<any>(this.API_URL + '/me');
+  }
+  getUsers(): Observable<any> {
+    return this.http.get<IUserHttp[]>(this.API_URL + '/users');
+  }
+  getUser(id: number): Observable<any> {
+    return this.http.get<any>(this.API_URL + '/users/' + id);
+  }
+  updateUser(
+    id: number,
+    firstName,
+    lastName,
+    email,
+    password,
+    city,
+    state
+  ): Observable<any> {
+    return this.http.put<number>(this.API_URL + '/users/' + id, {
+      firstName,
+      lastName,
+      email,
+      password,
+      city,
+      state,
+    });
+  }
   loginUser(email, password, remember): Observable<IUserHttp> {
     console.log(email, password, remember);
     console.log('Service works');
@@ -45,5 +72,8 @@ export class UserService {
       zip,
       role,
     });
+  }
+  deleteUser(id: number): Observable<any> {
+    return this.http.delete<any>(this.API_URL + '/users/' + id);
   }
 }
