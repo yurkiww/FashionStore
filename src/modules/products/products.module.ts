@@ -6,17 +6,18 @@ import { ProductDetailComponent } from 'src/pages/product-detail/product-detail.
 import { ProductDetailModule } from '../product-detail/product-detail.module';
 import { ItemBottomSectionModule } from '../item-bottom-section/item-bottom-section.module';
 import { ComponentsModule } from '../components/components.module';
+import { CartService } from 'src/services/cart.service';
 
 const routes: Route[] = [
   {
     path: '',
-    component: ProductsComponent
+    component: ProductsComponent,
   },
 
   {
     path: 'info',
-    component: ProductDetailComponent
-  }
+    component: ProductDetailComponent,
+  },
 ];
 
 @NgModule({
@@ -28,6 +29,7 @@ const routes: Route[] = [
     ItemBottomSectionModule,
     ComponentsModule,
   ],
-  exports: [RouterModule]
+  exports: [RouterModule],
+  providers: [CartService],
 })
 export class ProductsModule {}

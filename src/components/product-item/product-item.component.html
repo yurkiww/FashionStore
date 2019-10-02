@@ -6,7 +6,7 @@
       <div class="item_information__description">{{ item.description }}</div>
     </div>
     <div class="item_hover">
-      <button class="item_information__button">ADD TO BAG</button>
+      <button class="item_information__button" (click)="addToCartHandler()">ADD TO BAG</button>
       <div class="item_information__size">Sizes: {{ item.size }}</div>
     </div>
   </div>

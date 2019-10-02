@@ -1,11 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, Input, EventEmitter } from '@angular/core';
 import { IProductItem } from 'src/interfaces/product-item';
 import { IPagination } from 'src/interfaces/pagination';
+import { CartService } from 'src/services/cart.service';
 
 @Component({
   selector: 'app-products',
   templateUrl: './products.component.html',
-  styleUrls: ['./products.component.scss']
+  styleUrls: ['./products.component.scss'],
 })
 export class ProductsComponent implements OnInit {
   onPageChanged(e: IPagination) {
@@ -20,7 +21,7 @@ export class ProductsComponent implements OnInit {
       discount: 30,
       reducedPrice: 1399,
       img:
-        'https://5.imimg.com/data5/ST/PE/MY-47609367/stylish-slim-fit-casual-shirt-500x500.jpg'
+        'https://5.imimg.com/data5/ST/PE/MY-47609367/stylish-slim-fit-casual-shirt-500x500.jpg',
     },
     {
       name: 'Oxford',
@@ -30,7 +31,7 @@ export class ProductsComponent implements OnInit {
       discount: 50,
       reducedPrice: 999,
       img:
-        'https://s3-us-west-2.amazonaws.com/ebay94582/ebt/images/YW92993/5.jpg'
+        'https://s3-us-west-2.amazonaws.com/ebay94582/ebt/images/YW92993/5.jpg',
     },
     {
       name: 'TOMMY HILFIGER',
@@ -40,7 +41,7 @@ export class ProductsComponent implements OnInit {
       discount: 50,
       reducedPrice: 3625,
       img:
-        'https://www.brandfield.com/media/catalog/product/cache/image/9df78eab33525d08d6e5fb8d27136e95/t/h/th1791464.jpg'
+        'https://www.brandfield.com/media/catalog/product/cache/image/9df78eab33525d08d6e5fb8d27136e95/t/h/th1791464.jpg',
     },
     {
       name: 'PANIT',
@@ -50,9 +51,18 @@ export class ProductsComponent implements OnInit {
       discount: 60,
       reducedPrice: 559,
       img:
-        'https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/6993400/2018/7/30/b3d5f951-1149-4217-81a9-f50cb646fa3f1532928738800-PANIT-Women-Trousers-6611532928738642-1.jpg'
-    }
+        'https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/6993400/2018/7/30/b3d5f951-1149-4217-81a9-f50cb646fa3f1532928738800-PANIT-Women-Trousers-6611532928738642-1.jpg',
+    },
   ];
-  constructor() {}
-  ngOnInit() {}
+  constructor(private cartService: CartService) {}
+  ngOnInit() {
+    this.cartService.products = this.cartProducts;
+  }
+
+  cartProducts: IProductItem[] = [];
+
+  addToCart = (product: IProductItem) => {
+    this.cartProducts.push(product);
+    this.cartService.products = this.cartProducts;
+  };
 }

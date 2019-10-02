@@ -19,6 +19,7 @@ import { AuthGuardService } from 'src/services/authguard.service';
 import { SimpleNotificationsModule } from 'angular2-notifications';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
+import { CartService } from 'src/services/cart.service';
 
 @NgModule({
   declarations: [AppComponent],
