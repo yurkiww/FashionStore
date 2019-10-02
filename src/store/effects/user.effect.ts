@@ -9,7 +9,7 @@ import {
   loginSuccess,
   register,
   registerSuccess,
-  registerFailure,
+  registerFailure
 } from '../actions/user.actions';
 import { IUserHttp } from 'src/interfaces/user-http.interface';
 import { Router } from '@angular/router';
@@ -33,16 +33,15 @@ export class UserEffects {
           .loginUser(action.email, action.password, action.remember)
           .pipe(
             map((user) => {
+              console.log(user.access_token);
+
               console.log('Запит на логінування');
               console.log(user);
               this.goToHomePage();
               action.remember
-                ? this.storageService.setLocalToken(
-                    `Bearer ${user.access_token}`
-                  )
-                : this.storageService.setSessionToken(
-                    `Bearer ${user.access_token}`
-                  );
+                ? this.storageService.setLocalToken(user.access_token)
+                : this.storageService.setSessionToken(user.access_token);
+
               return loginSuccess();
             }),
             catchError((error) => of(loginFailure()))
@@ -75,7 +74,7 @@ export class UserEffects {
                   timeOut: 4000,
                   showProgressBar: true,
                   pauseOnHover: true,
-                  clickToClose: true,
+                  clickToClose: true
                 }
               );
               console.log('Запит на реєстрацію');

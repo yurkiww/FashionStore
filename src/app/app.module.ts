@@ -14,11 +14,13 @@ import { store } from 'src/store/reducers';
 import { EffectsModule } from '@ngrx/effects';
 import { UserEffects } from 'src/store/effects/user.effect';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
-// import { AuthInterceptor } from 'src/services/auth.interceptor';
 import { AuthGuardService } from 'src/services/authguard.service';
 import { SimpleNotificationsModule } from 'angular2-notifications';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
+import { AuthInterceptor } from 'src/services/auth.interceptor';
+
+// import { ProductsService } from 'src/services/products.service';
 
 @NgModule({
   declarations: [AppComponent],
@@ -35,16 +37,16 @@ import { NgModule } from '@angular/core';
     HttpClientModule,
     SimpleNotificationsModule.forRoot(),
     BrowserAnimationsModule,
-    CartModule,
+    CartModule
   ],
   providers: [
-    // {
-    //   provide: HTTP_INTERCEPTORS,
-    //   useClass: AuthInterceptor,
-    //   multi: true,
-    // },
-    AuthGuardService,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptor,
+      multi: true
+    },
+    AuthGuardService
   ],
-  bootstrap: [AppComponent],
+  bootstrap: [AppComponent]
 })
 export class AppModule {}

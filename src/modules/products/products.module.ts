@@ -6,6 +6,7 @@ import { ProductDetailComponent } from 'src/pages/product-detail/product-detail.
 import { ProductDetailModule } from '../product-detail/product-detail.module';
 import { ItemBottomSectionModule } from '../item-bottom-section/item-bottom-section.module';
 import { ComponentsModule } from '../components/components.module';
+import { ProductsService } from 'src/services/products.service';
 
 const routes: Route[] = [
   {
@@ -26,8 +27,9 @@ const routes: Route[] = [
     RouterModule.forChild(routes),
     ProductDetailModule,
     ItemBottomSectionModule,
-    ComponentsModule,
+    ComponentsModule
   ],
-  exports: [RouterModule]
+  exports: [RouterModule],
+  providers: [ProductsService]
 })
 export class ProductsModule {}
