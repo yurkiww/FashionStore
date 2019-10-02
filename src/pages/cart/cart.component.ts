@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, Input } from '@angular/core';
+import { Component, OnInit, Output, Input, EventEmitter } from '@angular/core';
 import { ICartProductItem } from 'src/interfaces/cart-product-item';
 import { IPriceDetails } from 'src/interfaces/cart-price-details';
 
@@ -38,8 +38,10 @@ export class CartComponent implements OnInit {
     },
   ];
   constructor() {}
-  @Input() sum = 0;
+  sum: number;
   receiveSum($event) {
+    // let total: number = this.sum;
+    //this.sum = 0;
     this.sum += $event;
   }
 

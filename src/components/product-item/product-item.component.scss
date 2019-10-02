@@ -1,4 +1,4 @@
-@import './src/styles/colors/colors.scss';
+@import "./src/styles/colors/colors.scss";
 
 .item {
   width: 250px;
@@ -11,26 +11,24 @@
   transition: 0.5s;
 
   &_hover {
-    display: none
+    display: none;
   }
 
   &:hover {
     box-shadow: $product-item-hover;
+    cursor: pointer;
 
     .item_unhover {
-      display: none
+      display: none;
     }
 
     .item_hover {
-      display: block
+      display: block;
     }
-
   }
 
   &__img {
     height: 250px;
-
-
   }
 
   &__price {
@@ -47,8 +45,6 @@
 
   &_information {
     padding: 10px;
-
-
 
     &__name {
       font-weight: 900;
@@ -71,7 +67,7 @@
       border-radius: 5px;
 
       &:hover {
-        opacity: 1
+        opacity: 1;
       }
     }
   }

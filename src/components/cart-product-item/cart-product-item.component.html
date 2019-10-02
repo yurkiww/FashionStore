@@ -23,7 +23,7 @@
 
       <p class="quantity">Qty: </p>
       <div class="option__select-quantity">
-        <select (change)="sendSum()" [(ngModel)]="selectedOption">
+        <select (change)="onChange()" [(ngModel)]="selectedOption">
           <option *ngFor="let items of item.qty">{{items}}</option>
         </select>
       </div>
@@ -31,7 +31,7 @@
     </div>
 
     <div class="content__buttons">
-      <button class="remove" (click)="removeItem()">Remove</button>
+      <button class="remove" (click)="removeItem($event)">Remove</button>
       <button class="wishlist">Move To Wishlist</button>
     </div>
 

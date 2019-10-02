@@ -16,6 +16,5 @@ export class ModalPlaceOrderComponent implements OnInit {
   ngOnInit() {}
   closeModal() {
     this.cartPriceDetailsComponent.closeModal();
-    // document.getElementById('modal').style.display = 'block';
   }
 }

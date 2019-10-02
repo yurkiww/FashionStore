@@ -9,6 +9,7 @@ import { ComponentsModule } from '../components/components.module';
 import { EffectsModule } from '@ngrx/effects';
 import { ProductEffects } from 'src/store/effects/product.effect';
 import { ProductService } from 'src/services/product.service';
+import { CartService } from 'src/services/cart.service';
 
 const routes: Route[] = [
   {
@@ -32,7 +33,7 @@ const routes: Route[] = [
     ComponentsModule,
     EffectsModule.forFeature([ProductEffects]),
   ],
-  providers: [ProductService],
   exports: [RouterModule],
+  providers: [CartService, ProductService],
 })
 export class ProductsModule {}

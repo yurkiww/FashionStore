@@ -21,8 +21,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule, InjectionToken } from '@angular/core';
 import { ProductEffects } from 'src/store/effects/product.effect';
 import { AppState } from 'src/store/reducers/index';
-// import { reducerUser } from 'src/store/reducers/user.reducers';
-// import { reducerProduct } from 'src/store/reducers/product.reducers';
+import { CartService } from 'src/services/cart.service';
 
 export const REDUCER_TOKEN = new InjectionToken<ActionReducerMap<AppState>>(
   'Registered Reducer'
@@ -43,9 +42,6 @@ export function getReducers() {
     AccountSettingsModule,
     FormsModule,
     StoreModule.forRoot(REDUCER_TOKEN),
-    // StoreModule.forRoot({ user: reducerUser, products: reducerProduct }),
-    // EffectsModule.forRoot([UserEffects]),
-    // EffectsModule.forRoot([ProductEffects]),
     HttpClientModule,
     SimpleNotificationsModule.forRoot(),
     BrowserAnimationsModule,

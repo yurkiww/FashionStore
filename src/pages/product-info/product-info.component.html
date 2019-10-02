@@ -8,7 +8,7 @@
     <div class="brand">
       <div class="brand-name">
         <p>
-          Levi's
+          {{product.brandName}}
         </p>
       </div>
       <div class="brand-logo">
@@ -17,11 +17,11 @@
     </div>
 
     <div class="item-description">
-      <p>short item description</p>
+      <p>{{product.description}}</p>
     </div>
     <div class="pricing">
       <div class="price">
-        <p> 99$ </p>
+        <p> {{product.basicPrice}}$ </p>
 
       </div>
       <div class="free-shipping">
@@ -76,8 +76,5 @@
         Delivery from branded brand stores guarantee the originally of the goods.
       </div>
     </div>
-
-
-
   </div>
 </div>

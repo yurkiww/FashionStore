@@ -7,7 +7,8 @@
 <div class="product__list">
 
   <div *ngFor="let product of products">
-    <app-product-item [item]="product"></app-product-item>
+    <app-product-item [routerLink]="['/products',product.id]" [item]="product" (addToCart)="addToCart($event)">
+    </app-product-item>
   </div>
 </div>
 <app-pagination size="12" total="100" (pageChanged)="onPageChanged($event)"></app-pagination>

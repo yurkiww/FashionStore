@@ -33,6 +33,8 @@ export class UserEffects {
           .loginUser(action.email, action.password, action.remember)
           .pipe(
             map((user) => {
+              console.log(user.access_token);
+
               console.log('Запит на логінування');
               console.log(user);
               this.goToHomePage();
