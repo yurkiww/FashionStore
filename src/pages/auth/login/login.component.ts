@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 import { login } from 'src/store/actions//user.actions';
-import { IAppState } from 'src/store/state/app.state';
+import { AppState } from 'src/store/reducers/index';
 import { Store, select } from '@ngrx/store';
 import { UserService } from 'src/services/user.service';
 
@@ -15,7 +15,7 @@ export class LoginComponent implements OnInit {
   inputTypePassword = 'password';
   loginForm: FormGroup;
   constructor(
-    private store: Store<IAppState>,
+    private store: Store<AppState>,
     private fb: FormBuilder,
     private userService: UserService
   ) {}
@@ -26,10 +26,6 @@ export class LoginComponent implements OnInit {
       password: ['', [Validators.minLength(8), Validators.required]],
       remember: [false],
     });
-
-    this.userService
-      .getUsers()
-      .subscribe((res) => console.log(res), (err) => console.log(err));
   }
 
   public loginUser = () => {

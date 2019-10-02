@@ -45,7 +45,7 @@ export class UserService {
   }
   loginUser(email, password, remember): Observable<IUserHttp> {
     console.log(email, password, remember);
-    console.log('Service works');
+    console.log('Service for login works');
     return this.http.post<IUserHttp>(this.API_URL + '/login', {
       email,
       password,

@@ -7,7 +7,7 @@ import {
   // GetUsers,
   register,
 } from 'src/store/actions//user.actions';
-import { IAppState } from 'src/store/state/app.state';
+import { AppState } from 'src/store/reducers/index';
 import { Store, select } from '@ngrx/store';
 @Component({
   selector: 'app-register',
@@ -16,7 +16,7 @@ import { Store, select } from '@ngrx/store';
 })
 export class RegisterComponent implements OnInit {
   registerForm: FormGroup;
-  constructor(private store: Store<IAppState>, private fb: FormBuilder) {}
+  constructor(private store: Store<AppState>, private fb: FormBuilder) {}
 
   ngOnInit() {
     this.registerForm = this.fb.group({
