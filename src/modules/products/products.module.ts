@@ -7,6 +7,7 @@ import { ProductDetailModule } from '../product-detail/product-detail.module';
 import { ItemBottomSectionModule } from '../item-bottom-section/item-bottom-section.module';
 import { ComponentsModule } from '../components/components.module';
 import { CartService } from 'src/services/cart.service';
+import { ProductsService } from 'src/services/products.service';
 
 const routes: Route[] = [
   {
@@ -30,6 +31,6 @@ const routes: Route[] = [
     ComponentsModule,
   ],
   exports: [RouterModule],
-  providers: [CartService],
+  providers: [CartService, ProductsService],
 })
 export class ProductsModule {}
