@@ -7,7 +7,7 @@ import { IUserHttp } from 'src/interfaces/user-http.interface';
 import { IUser } from 'src/interfaces/user.interface';
 
 @Injectable({
-  providedIn: 'root',
+  providedIn: 'root'
 })
 export class UserService {
   API_URL = environment.API_URL;
@@ -22,9 +22,9 @@ export class UserService {
   getUsers(): Observable<any> {
     return this.http.get<IUserHttp[]>(this.API_URL + '/users');
   }
-  getUser(id: number): Observable<any> {
-    return this.http.get<any>(this.API_URL + '/users/' + id);
-  }
+  // getUser(id: number): Observable<any> {
+  //   return this.http.get<any>(this.API_URL + '/users/' + id);
+  // }
   updateUser(
     id: number,
     firstName,
@@ -40,7 +40,7 @@ export class UserService {
       email,
       password,
       city,
-      state,
+      state
     });
   }
   loginUser(email, password, remember): Observable<IUserHttp> {
@@ -48,7 +48,7 @@ export class UserService {
     console.log('Service for login works');
     return this.http.post<IUserHttp>(this.API_URL + '/login', {
       email,
-      password,
+      password
     });
   }
   registerUser(
@@ -70,7 +70,7 @@ export class UserService {
       city,
       state,
       zip,
-      role,
+      role
     });
   }
   deleteUser(id: number): Observable<any> {
