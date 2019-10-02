@@ -6,7 +6,7 @@ import { IUser } from 'src/interfaces/user.interface';
 @Component({
   selector: 'app-account-settings',
   templateUrl: './account-settings.component.html',
-  styleUrls: ['./account-settings.component.scss']
+  styleUrls: ['./account-settings.component.scss'],
 })
 export class AccountSettingsComponent implements OnInit {
   constructor(private userService: UserService) {}
@@ -20,7 +20,7 @@ export class AccountSettingsComponent implements OnInit {
       lastName: new FormControl('', Validators.required),
       zip: new FormControl('', [Validators.required]),
       city: new FormControl('', Validators.required),
-      state: new FormControl('', Validators.required)
+      state: new FormControl('', Validators.required),
     });
 
     // this.getUsers();
@@ -45,7 +45,7 @@ export class AccountSettingsComponent implements OnInit {
   //   });
   // }
   private getCurrentUser() {
-    this.userService.getCurrentUser().subscribe((res) => {
+    this.userService.getMe().subscribe((res) => {
       this.users = res;
       console.log(res);
     });
@@ -54,7 +54,7 @@ export class AccountSettingsComponent implements OnInit {
     if (this.currentUser) {
       const user = {
         ...this.form.value,
-        id: this.currentUser.id
+        id: this.currentUser.id,
       };
       this.userService.editUser(user).subscribe((res) => {
         this.getCurrentUser();
