@@ -6,8 +6,6 @@ import { CartProductItemComponent } from 'src/components/cart-product-item/cart-
 import { CartPriceDetailsComponent } from 'src/components/cart-price-details/cart-price-details.component';
 import { FormsModule } from '@angular/forms';
 import { ModalPlaceOrderComponent } from 'src/components/modal-place-order/modal-place-order.component';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { CartService } from 'src/services/cart.service';
 
 const routes: Route[] = [
   {
@@ -30,6 +28,5 @@ const routes: Route[] = [
     ModalPlaceOrderComponent,
     CartProductItemComponent,
   ],
-  providers: [CartService],
 })
 export class CartModule {}

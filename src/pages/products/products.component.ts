@@ -16,8 +16,7 @@ export class ProductsComponent implements OnInit {
   id: string;
   constructor(
     private productsService: ProductsService,
-    private route: ActivatedRoute,
-    private cartService: CartService
+    private route: ActivatedRoute
   ) {}
 
   private getProducts() {
@@ -30,14 +29,6 @@ export class ProductsComponent implements OnInit {
     console.log(e);
   }
   ngOnInit() {
-    this.cartService.products = this.cartProducts;
     this.getProducts();
   }
-
-  cartProducts: IProductItem[] = [];
-
-  addToCart = (product: IProductItem) => {
-    this.cartProducts.push(product);
-    this.cartService.products = this.cartProducts;
-  };
 }

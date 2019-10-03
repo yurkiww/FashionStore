@@ -1,8 +1,20 @@
 import { Injectable } from '@angular/core';
-import { IProductItem } from 'src/interfaces/product-item';
+import { IProduct } from 'src/interfaces/products.interface';
 
-@Injectable()
+@Injectable({
+  providedIn: 'root',
+})
 export class CartService {
-  products: IProductItem[] = [];
-  constructor() {}
+  private products: IProduct[];
+
+  constructor() {
+    this.products = [];
+  }
+  public setOption(option) {
+    this.products.push(option);
+  }
+
+  public getOption(): IProduct[] {
+    return this.products;
+  }
 }

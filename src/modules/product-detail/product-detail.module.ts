@@ -7,8 +7,12 @@ import { Route, RouterModule } from '@angular/router';
 import { ProductInfoComponent } from 'src/pages/product-info/product-info.component';
 
 @NgModule({
-  declarations: [ProductDetailComponent, ProductInfoComponent],
-  imports: [CommonModule, ItemBottomSectionModule],
-  exports: [ProductDetailComponent, ItemBottomSectionModule],
+  declarations: [
+    ProductDetailComponent,
+    ProductInfoComponent,
+    ItemBottomSectionComponent,
+  ],
+  imports: [CommonModule],
+  exports: [ProductDetailComponent],
 })
 export class ProductDetailModule {}

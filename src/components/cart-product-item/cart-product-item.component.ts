@@ -1,7 +1,7 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { ICartProductItem } from 'src/interfaces/cart-product-item';
 import { CartService } from 'src/services/cart.service';
-import { IProductItem } from 'src/interfaces/product-item';
+import { IProduct } from 'src/interfaces/products.interface';
 
 @Component({
   selector: 'app-cart-product-item',
@@ -9,27 +9,24 @@ import { IProductItem } from 'src/interfaces/product-item';
   styleUrls: ['./cart-product-item.component.scss'],
 })
 export class CartProductItemComponent implements OnInit {
-  @Input() item: ICartProductItem;
-  @Output() OnChanged = new EventEmitter();
+  @Input() item: IProduct;
+  @Output() onChanged = new EventEmitter();
+  @Output() deleteFromCart = new EventEmitter();
   products: ICartProductItem[] = [];
   selectedOption = 1;
-  constructor(private cartService: CartService) {}
-  sum: number;
+  constructor() {}
+
+  sum: number = 0;
   onChange() {
-    this.sum = this.item.price * this.selectedOption;
-    this.OnChanged.emit(this.sum);
+    this.sum = this.item.basicPrice * this.item.quantity;
+    this.onChanged.emit(this.sum);
   }
 
-  removeItem(product: ICartProductItem) {
-    // const index = this.products.findIndex((pr) => {
-    //   return product.brand === pr.brand;
-    // });
-    // if (index >= 0) {
-    //   this.products = this.products.splice(index, 1);
-    // }
+  removeItem() {
+    this.deleteFromCart.emit(this.item);
   }
+
   ngOnInit() {
     this.onChange();
-    //this.products = this.cartService.products;
   }
 }
