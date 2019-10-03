@@ -2,30 +2,46 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { UserService } from 'src/services/user.service';
 import { IUser } from 'src/interfaces/user.interface';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-account-settings',
   templateUrl: './account-settings.component.html',
-  styleUrls: ['./account-settings.component.scss']
+  styleUrls: ['./account-settings.component.scss'],
 })
 export class AccountSettingsComponent implements OnInit {
-  constructor(private userService: UserService) {}
+  constructor(
+    private userService: UserService,
+    private route: ActivatedRoute
+  ) {}
   users: IUser[] = [];
   currentUser: IUser;
   form: FormGroup;
+
   ngOnInit() {
+    this.currentUser = this.route.snapshot.data.user;
     this.form = new FormGroup({
-      email: new FormControl('', [Validators.required, Validators.email]),
-      firstName: new FormControl('', Validators.required),
-      lastName: new FormControl('', Validators.required),
-      zip: new FormControl('', [Validators.required]),
-      city: new FormControl('', Validators.required),
-      state: new FormControl('', Validators.required)
+      email: new FormControl(`${this.currentUser.email}`, [
+        Validators.required,
+        Validators.email,
+      ]),
+      firstName: new FormControl(
+        `${this.currentUser.firstName}`,
+        Validators.required
+      ),
+      lastName: new FormControl(
+        `${this.currentUser.lastName}`,
+        Validators.required
+      ),
+      zip: new FormControl(`${this.currentUser.zip}`, [Validators.required]),
+      city: new FormControl(`${this.currentUser.city}`, Validators.required),
+      state: new FormControl(`${this.currentUser.state}`, Validators.required),
     });
 
     // this.getUsers();
     // this.getUser(2);
-    this.getCurrentUser();
+    // this.getCurrentUser();
+    console.log();
   }
   // private getUsers() {
   //   this.userService.getUsers().subscribe(
@@ -44,17 +60,18 @@ export class AccountSettingsComponent implements OnInit {
   //     console.log(res);
   //   });
   // }
-  private getCurrentUser() {
-    this.userService.getMe().subscribe((res) => {
-      this.users = res;
-      console.log(res);
-    });
-  }
+
+  // private getCurrentUser() {
+  //   this.userService.getMe().subscribe((res) => {
+  //     this.users = res;
+  //     console.log(res);
+  //   });
+  // }
   updateUser = () => {
     if (this.currentUser) {
       const user = {
         ...this.form.value,
-        id: this.currentUser.id
+        id: this.currentUser.id,
       };
       // this.userService.editUser(user).subscribe((res) => {
       //   this.getCurrentUser();

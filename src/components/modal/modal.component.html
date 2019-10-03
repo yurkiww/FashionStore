@@ -9,15 +9,15 @@
         </div>
 
         <div class="info">
-          <div class="name">Ivan Ivanov</div>
-          <div class="email">somemail@mail.com</div>
+          <div class="name">{{user.firstName}} {{user.lastName}}</div>
+          <div class="email">{{user.email}}</div>
         </div>
       </div>
 
     </div>
 
     <div class="modal-menu">
-      <div class="profile">
+      <!-- <div class="profile">
 
         <div class="image">
           <img src="../../assets//svg//avatar.svg" alt="">
@@ -25,8 +25,8 @@
         <div class="profile-text">
           <p>My profile</p>
         </div>
-      </div>
-      <a routerLink="//account">
+      </div> -->
+      <a routerLink="//account" (click)="closeModal()">
         <div class="settings">
           <div class="image">
             <img src="../../assets//svg//settings.svg" alt="">

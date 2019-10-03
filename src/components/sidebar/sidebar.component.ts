@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { IUser } from 'src/interfaces/user.interface';
 
 interface ISidebar {
   userName: string;
@@ -12,6 +13,7 @@ interface ISidebar {
   styleUrls: ['./sidebar.component.scss'],
 })
 export class SidebarComponent implements OnInit {
+  @Input() user: IUser;
   @Input() sidebar: ISidebar = {
     userName: 'IVAN',
     userLastName: 'IVANOV',

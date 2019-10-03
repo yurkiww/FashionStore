@@ -5,6 +5,8 @@ import { RegisterComponent } from 'src/pages/auth/register/register.component';
 import { DashboardComponent } from 'src/pages/dashboard/dashboard.component';
 import { AuthGuardService as AuthGuard } from 'src/services/authguard.service';
 import { ProductInfoComponent } from 'src/pages/product-info/product-info.component';
+import { UserService } from 'src/services/user.service';
+import { UserResolver } from 'src/resolvers/user.resolver';
 
 // const productRoutes: Routes = [
 //   { path: 'details', component: ProductInfoComponent }
@@ -13,20 +15,21 @@ import { ProductInfoComponent } from 'src/pages/product-info/product-info.compon
 const routes: Route[] = [
   {
     path: 'login',
-    component: LoginComponent
+    component: LoginComponent,
   },
   {
     path: 'register',
-    component: RegisterComponent
+    component: RegisterComponent,
   },
   //НЕ ЗАБУДЬ ВИДАЛИТИ ЦЕЙ РОУТ!!!
   {
     path: 'product-info',
-    component: ProductInfoComponent
+    component: ProductInfoComponent,
   },
   {
     path: '',
     component: DashboardComponent,
+    resolve: { user: UserResolver },
     canActivate: [AuthGuard],
     children: [
       {
@@ -34,37 +37,38 @@ const routes: Route[] = [
         loadChildren: () =>
           import('src/modules/products/products.module').then(
             (m) => m.ProductsModule
-          )
+          ),
       },
       {
         path: 'products/:id',
-        component: ProductInfoComponent
+        component: ProductInfoComponent,
       },
       {
         path: 'account',
         loadChildren: () =>
           import('src/modules/account-settings/account-settings.module').then(
             (m) => m.AccountSettingsModule
-          )
+          ),
       },
       {
         path: 'new-item',
         loadChildren: () =>
           import('src/modules/new-item-page/new-item-page.module').then(
             (m) => m.NewItemPageModule
-          )
+          ),
       },
       {
         path: 'cart',
         loadChildren: () =>
-          import('src/modules/cart/cart.module').then((m) => m.CartModule)
-      }
-    ]
-  }
+          import('src/modules/cart/cart.module').then((m) => m.CartModule),
+      },
+    ],
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
+  providers: [UserService, UserResolver],
 })
 export class AppRoutingModule {}

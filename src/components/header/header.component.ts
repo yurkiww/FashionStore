@@ -1,4 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { IUser } from 'src/interfaces/user.interface';
 interface IHeader {
   logoUrl: string;
   userName: string;
@@ -14,8 +15,7 @@ interface IHeader {
 export class HeaderComponent implements OnInit {
   @Output() OnOpen = new EventEmitter();
   @Output() OnClose = new EventEmitter();
-  visible = false;
-
+  @Input() user: IUser;
   @Input() header: IHeader = {
     logoUrl: 'assets/header/logo-myshop.png',
     userName: 'Ivan',
@@ -23,11 +23,17 @@ export class HeaderComponent implements OnInit {
     userImg: 'assets/header/user_male.png',
   } as IHeader;
 
+  visible = false;
   openModal = () => {
     this.visible = !this.visible;
     this.visible ? this.OnOpen.emit() : this.OnClose.emit();
   };
-  constructor() { }
+  closeModal = () => {
+    this.visible = false;
+  };
+  constructor() {}
 
-  ngOnInit() { }
+  ngOnInit() {
+    console.log(this.user);
+  }
 }

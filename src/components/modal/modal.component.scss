@@ -70,17 +70,19 @@
         display: flex;
         padding: 0 0 0 35px;
         height: 40px;
-        &:hover{
+
+        &:hover {
           cursor: pointer;
         }
+
         .image {
           width: 15px;
           height: 15px;
-          margin: 17px 10px 0 0;
+          margin: 13px 10px 0 0;
         }
 
         &-text {
-          padding-top: 16px;
+          padding-top: 10px;
         }
       }
     }

@@ -17,4 +17,36 @@ export class ProductService {
     console.log(this.API_URL + '/products' + id);
     return this.http.get<IProduct>(this.API_URL + '/products/' + id);
   }
+  createNewProduct(
+    name: string,
+    brandName: string,
+    basicPrice: number,
+    description: string,
+    cloth: string,
+    quantity: number,
+    user: number,
+    typeName: string,
+    valueName: [string]
+  ): Observable<any> {
+    return this.http.post<any>(this.API_URL + '/products', {
+      name,
+      brandName,
+      basicPrice,
+      description,
+      cloth,
+      quantity,
+      user,
+      typeName,
+      valueName,
+    });
+  }
+  addNewImage(id: number, file: string): Observable<any> {
+    return this.http.post<any>(this.API_URL + '/products/images/' + id, file);
+  }
+  getAllImages(): Observable<any> {
+    return this.http.get<any>(this.API_URL + '/products/images');
+  }
+  getImage(path: string): Observable<any> {
+    return this.http.get<any>(this.API_URL + '/products/images/' + path);
+  }
 }

@@ -22,12 +22,6 @@ export class AuthInterceptor implements HttpInterceptor {
       ? localStorage.getItem('token')
       : sessionStorage.getItem('token');
     console.log(token);
-
-    // console.log('Local:' + token);
-    // if (token == null) {
-    //   token = sessionStorage.getItem('Token');
-    // }
-    // console.log('Session:' + token);
     if (token) {
       request = request.clone({
         setHeaders: {
@@ -45,11 +39,12 @@ export class AuthInterceptor implements HttpInterceptor {
           subscriber.next(response);
         },
         (err) => {
+          console.log(err);
+          this.notif.error(err.error.message, err.error.title, {
+            timeOut: 3000,
+          });
           if (err.status === 401) {
             localStorage.clear();
-            // this.notif.error('You are not authorized', err.error.title, {
-            //   timeOut: 3000,
-            // });
             this.router.navigate(['/login']);
           } else {
             // this.notif.error(err.error.title);

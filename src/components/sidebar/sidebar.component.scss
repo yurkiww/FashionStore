@@ -25,7 +25,7 @@ p {
 
 .sidebar_head {
   padding: 20px 15px 10px 15px;
-  height: 12vh;
+  height: 100px;
   width: 100%;
   display: flex;
 }
@@ -43,14 +43,13 @@ p {
 }
 
 .sidebar_list {
-  padding-top: 30px;
   width: 100%;
 }
 
 .sidebar_list_item {
   display: flex;
   width: 100%;
-  height: 7vh;
+  height: 45px;
 
   padding: 9px 20px;
 

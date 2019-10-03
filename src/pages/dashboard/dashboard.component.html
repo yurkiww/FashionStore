@@ -1,6 +1,6 @@
-<app-header></app-header>
+<app-header [user]="currentUser"></app-header>
 <div class="dashboard_page">
-  <app-sidebar></app-sidebar>
+  <app-sidebar [user]="currentUser"></app-sidebar>
   <div style="width: 100%">
     <router-outlet></router-outlet>
   </div>

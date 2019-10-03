@@ -3,8 +3,7 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 import { login } from 'src/store/actions//user.actions';
 import { AppState } from 'src/store/reducers/index';
-import { Store, select } from '@ngrx/store';
-import { UserService } from 'src/services/user.service';
+import { Store } from '@ngrx/store';
 
 @Component({
   selector: 'app-login',
@@ -14,11 +13,7 @@ import { UserService } from 'src/services/user.service';
 export class LoginComponent implements OnInit {
   inputTypePassword = 'password';
   loginForm: FormGroup;
-  constructor(
-    private store: Store<AppState>,
-    private fb: FormBuilder,
-    private userService: UserService
-  ) {}
+  constructor(private store: Store<AppState>, private fb: FormBuilder) {}
 
   ngOnInit() {
     this.loginForm = this.fb.group({
@@ -44,4 +39,10 @@ export class LoginComponent implements OnInit {
   hidePassword() {
     this.inputTypePassword = 'password';
   }
+  isFieldValid = (filedName: string) => {
+    return (
+      this.loginForm.get(filedName).invalid &&
+      this.loginForm.get(filedName).touched
+    );
+  };
 }

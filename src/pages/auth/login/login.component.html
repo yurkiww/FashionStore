@@ -7,12 +7,17 @@
       </p>
       <br>
       <div class="login_block_form__item">
-        <input formControlName="email" type="email" class="login_block_form__item-control" placeholder="Enter email">
+        <input formControlName="email" type="email" class="login_block_form__item-control" placeholder="Enter email"
+          [ngClass]="{
+          'red-border': isFieldValid('email')
+        }">
       </div>
       <div class="login_block_form__item">
         <div class="show_password">
           <input formControlName="password" [type]="inputTypePassword" class="login_block_form__item-control"
-            placeholder="Password" id="showPassword">
+            placeholder="Password" id="showPassword" [ngClass]="{
+              'red-border': isFieldValid('password')
+            }">
           <div (mousedown)="showPassword()" (mouseup)="hidePassword()"><img src="assets/auth/hidden.svg" alt=""></div>
         </div>
         <p><small><a><u>I forgot my password</u></a></small></p>

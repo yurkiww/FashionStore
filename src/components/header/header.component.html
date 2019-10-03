@@ -1,7 +1,7 @@
 <div class=header>
   <img class=header__img [src]="header.logoUrl">
-  <p class=header__user>{{header.userName}} {{header.userLastName}}</p>
+  <p class=header__user>{{user.firstName}} {{user.lastName}}</p>
   <img class=header__user-img [src]=header.userImg (click)='openModal()'>
 </div>
 
-<app-modal class="modal" [hidden]='!visible'></app-modal>
+<app-modal class="modal" [hidden]='!visible' [user]="user"></app-modal>

@@ -4,16 +4,18 @@ import { AccountSettingsComponent } from 'src/components/account-settings/accoun
 import { ReactiveFormsModule } from '@angular/forms';
 import { Route, RouterModule } from '@angular/router';
 import { UserService } from 'src/services/user.service';
+import { UserResolver } from 'src/resolvers/user.resolver';
 
 const routes: Route[] = [
   {
     path: '',
-    component: AccountSettingsComponent
-  }
+    component: AccountSettingsComponent,
+    resolve: { user: UserResolver },
+  },
 ];
 @NgModule({
   declarations: [AccountSettingsComponent],
   imports: [CommonModule, RouterModule.forChild(routes), ReactiveFormsModule],
-  providers: [UserService]
+  providers: [UserService, UserResolver],
 })
 export class AccountSettingsModule {}

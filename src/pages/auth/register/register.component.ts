@@ -20,11 +20,11 @@ export class RegisterComponent implements OnInit {
 
   ngOnInit() {
     this.registerForm = this.fb.group({
-      firstName: [''],
-      lastName: [''],
-      email: ['', Validators.email],
-      password: ['', Validators.minLength(8)],
-      passwordConfirm: ['', Validators.minLength(8)],
+      firstName: ['', Validators.required],
+      lastName: ['', Validators.required],
+      email: ['', [Validators.email, Validators.required]],
+      password: ['', [Validators.minLength(8), Validators.required]],
+      passwordConfirm: ['', [Validators.minLength(8), Validators.required]],
     });
   }
   public registerUser = () => {
@@ -41,5 +41,20 @@ export class RegisterComponent implements OnInit {
         role: 'default',
       })
     );
+  };
+  isFieldValid = (filedName: string) => {
+    return (
+      this.registerForm.get(filedName).invalid &&
+      this.registerForm.get(filedName).touched
+    );
+  };
+  passwordConfirmation = () => {
+    if (this.registerForm.value.password != '') {
+      return (
+        this.registerForm.value.password ==
+        this.registerForm.value.passwordConfirm
+      );
+    }
+    return false;
   };
 }
