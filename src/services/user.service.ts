@@ -25,6 +25,9 @@ export class UserService {
   // getUser(id: number): Observable<any> {
   //   return this.http.get<any>(this.API_URL + '/users/' + id);
   // }
+  public editUser(user: IUser): Observable<IUser> {
+    return this.http.put<IUser>(`${this.API_URL}/users/${user.id}`, user);
+  }
   updateUser(
     id: number,
     firstName,

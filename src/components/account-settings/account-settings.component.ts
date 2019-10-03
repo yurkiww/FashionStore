@@ -10,8 +10,8 @@ import { IUser } from 'src/interfaces/user.interface';
 })
 export class AccountSettingsComponent implements OnInit {
   constructor(private userService: UserService) {}
-  users: IUser[] = [];
   currentUser: IUser;
+  user = {};
   form: FormGroup;
   ngOnInit() {
     this.form = new FormGroup({
@@ -23,30 +23,13 @@ export class AccountSettingsComponent implements OnInit {
       state: new FormControl('', Validators.required)
     });
 
-    // this.getUsers();
-    // this.getUser(2);
     this.getCurrentUser();
+    console.log(this.user);
   }
-  // private getUsers() {
-  //   this.userService.getUsers().subscribe(
-  //     (res) => {
-  //       this.users = res;
-  //       console.log(res);
-  //     },
-  //     (err) => {
-  //       console.log(err);
-  //     }
-  //   );
-  // }
-  // private getUser(userId: number) {
-  //   this.userService.getUser(userId).subscribe((res) => {
-  //     this.users = res;w
-  //     console.log(res);
-  //   });
-  // }
+
   private getCurrentUser() {
     this.userService.getMe().subscribe((res) => {
-      this.users = res;
+      this.user = res;
       console.log(res);
     });
   }
@@ -56,10 +39,10 @@ export class AccountSettingsComponent implements OnInit {
         ...this.form.value,
         id: this.currentUser.id
       };
-      // this.userService.editUser(user).subscribe((res) => {
-      //   this.getCurrentUser();
-      //   this.currentUser = null;
-      // });
+      this.userService.editUser(user).subscribe((res) => {
+        this.getCurrentUser();
+        this.currentUser = null;
+      });
     }
   };
 
