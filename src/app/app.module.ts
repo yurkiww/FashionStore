@@ -9,17 +9,28 @@ import { AccountSettingsModule } from 'src/modules/account-settings/account-sett
 import { CartModule } from 'src/modules/cart/cart.module';
 
 import { FormsModule } from '@angular/forms';
-import { StoreModule } from '@ngrx/store';
-import { store } from 'src/store/reducers';
+import { StoreModule, ActionReducerMap } from '@ngrx/store';
+import store from 'src/store/reducers';
 import { EffectsModule } from '@ngrx/effects';
 import { UserEffects } from 'src/store/effects/user.effect';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
-// import { AuthInterceptor } from 'src/services/auth.interceptor';
+import { AuthInterceptor } from 'src/services/auth.interceptor';
 import { AuthGuardService } from 'src/services/authguard.service';
 import { SimpleNotificationsModule } from 'angular2-notifications';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { NgModule } from '@angular/core';
+import { NgModule, InjectionToken } from '@angular/core';
+import { ProductEffects } from 'src/store/effects/product.effect';
+import { AppState } from 'src/store/reducers/index';
+import { CartService } from 'src/services/cart.service';
 
+export const REDUCER_TOKEN = new InjectionToken<ActionReducerMap<AppState>>(
+  'Registered Reducer'
+);
+export function getReducers() {
+  return {
+    ...store,
+  };
+}
 @NgModule({
   declarations: [AppComponent],
   imports: [
@@ -30,20 +41,20 @@ import { NgModule } from '@angular/core';
     ProductsModule,
     AccountSettingsModule,
     FormsModule,
-    StoreModule.forRoot(store),
-    EffectsModule.forRoot([UserEffects]),
+    StoreModule.forRoot(REDUCER_TOKEN),
     HttpClientModule,
     SimpleNotificationsModule.forRoot(),
     BrowserAnimationsModule,
     CartModule,
   ],
   providers: [
-    // {
-    //   provide: HTTP_INTERCEPTORS,
-    //   useClass: AuthInterceptor,
-    //   multi: true,
-    // },
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptor,
+      multi: true,
+    },
     AuthGuardService,
+    { provide: REDUCER_TOKEN, useFactory: getReducers },
   ],
   bootstrap: [AppComponent],
 })

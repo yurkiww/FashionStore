@@ -1,4 +1,4 @@
-@import './src/styles/colors/colors.scss';
+@import "./src/styles/colors/colors.scss";
 
 .content {
   padding: 4%;
@@ -7,8 +7,6 @@
   font-family: sans-serif;
   color: $account-settings_content;
   height: 84vh;
-
-
 
   justify-content: center;
   -webkit-box-shadow: 11px 14px 293px -147px rgba(0, 0, 0, 0.75);
@@ -129,11 +127,11 @@
       font-size: 15px;
       border: none;
       cursor: pointer;
+      margin-right: 2px;
 
       &:disabled {
         opacity: 0.6;
         cursor: default;
-
       }
     }
   }

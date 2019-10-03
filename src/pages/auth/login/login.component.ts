@@ -2,8 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 import { login } from 'src/store/actions//user.actions';
-import { IAppState } from 'src/store/state/app.state';
+import { AppState } from 'src/store/reducers/index';
 import { Store, select } from '@ngrx/store';
+import { UserService } from 'src/services/user.service';
 
 @Component({
   selector: 'app-login',
@@ -13,7 +14,11 @@ import { Store, select } from '@ngrx/store';
 export class LoginComponent implements OnInit {
   inputTypePassword = 'password';
   loginForm: FormGroup;
-  constructor(private store: Store<IAppState>, private fb: FormBuilder) {}
+  constructor(
+    private store: Store<AppState>,
+    private fb: FormBuilder,
+    private userService: UserService
+  ) {}
 
   ngOnInit() {
     this.loginForm = this.fb.group({

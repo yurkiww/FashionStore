@@ -33,16 +33,14 @@ export class UserEffects {
           .loginUser(action.email, action.password, action.remember)
           .pipe(
             map((user) => {
+              console.log(user.access_token);
+
               console.log('Запит на логінування');
               console.log(user);
               this.goToHomePage();
               action.remember
-                ? this.storageService.setLocalToken(
-                    `Bearer ${user.access_token}`
-                  )
-                : this.storageService.setSessionToken(
-                    `Bearer ${user.access_token}`
-                  );
+                ? this.storageService.setLocalToken(user.access_token)
+                : this.storageService.setSessionToken(user.access_token);
               return loginSuccess();
             }),
             catchError((error) => of(loginFailure()))
